@@ -31,13 +31,13 @@ export default function ContactInfo() {
             </a>
          {/* Instagram */}
             <a
-            href="https://instagram.com/"
+            href="https://www.instagram.com/maximepienture/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center bg-white rounded-xl shadow p-6 hover:shadow-2xl transition"
             >
             <span className="text-lg font-bold mb-2 text-gray-700">{t('instagram_label')}</span>
-            <span className="text-pink-600">@placeholder_company</span>
+            <span className="text-pink-600">@maximepeinture</span>
             </a>
 
             {/* Facebook */}
@@ -48,7 +48,7 @@ export default function ContactInfo() {
               className="flex flex-col items-center bg-white rounded-xl shadow p-6 hover:shadow-2xl transition"
             >
               <span className="text-lg font-bold mb-2 text-gray-700">{t('facebook_label')}</span>
-              <span className="text-sky-700">@placeholder_company</span>
+              <span className="text-sky-700">@maximepeinture</span>
             </a>
           </div>
           {/* Google Maps Embed */}

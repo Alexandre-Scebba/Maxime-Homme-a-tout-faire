@@ -21,7 +21,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <span className="font-bold text-yellow-600">Get a Free Quote Today!</span>
           <span className="hidden sm:inline">•</span>
-          <span className="hidden sm:inline">Excavation for All Your Needs</span>
+          <span className="hidden sm:inline">Professional painting services</span>
         </div>
         {/* Right side - Contact info */}
         <div className="flex items-center gap-4">
@@ -47,24 +47,16 @@ export default function Header() {
         <div className="w-full flex items-center justify-between py-4 px-4 lg:px-8 flex-wrap gap-2">
           {/* Logo - Home Button - Always visible */}
           <Link href="/" className="flex items-center flex-shrink-0 group" prefetch={false}>
-            <Image
-              src="/file.svg"
-              alt="Placeholder Company Logo"
-              width={56}
-              height={56}
-              className="rounded-full bg-white border border-gray-200 shadow group-hover:opacity-80 transition w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16"
-              priority
-            />
-            <span
-              className="ml-1 font-extrabold text-gray-900 blue-fill-hover group-hover:text-sky-700 transition hidden sm:block"
-              style={{
-                fontSize: "clamp(0.7rem, 1vw, 1.1rem)",
-                whiteSpace: "nowrap",
-                lineHeight: 1.1
-              }}
-            >
-              Placeholder Company
-            </span>
+              <Image
+                src="/logo-char.jpg"
+                alt="Maxime Peinture logo"
+                width={56}
+                height={56}
+                className="bg-white border border-gray-200 shadow group-hover:opacity-80 transition w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-cover rounded-md"
+                priority
+              />
+              {/* visually-hidden brand name for accessibility (removed from visual header) */}
+              <span className="sr-only">Maxime Peinture</span>
           </Link>
 
           {/* Center Navigation - Hidden on smaller screens */}
@@ -107,7 +99,7 @@ export default function Header() {
           <div className="flex items-center gap-2 flex-shrink-0">
             {/* Get a Quote Button - Always visible */}
             <a
-              href="#quote"
+              href={isHome ? "#quote" : "/#quote"}
               className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold py-2 px-3 sm:px-4 md:px-5 rounded-lg shadow hover:from-yellow-500 hover:to-yellow-700 transition text-center whitespace-nowrap text-sm sm:text-base"
               style={{ lineHeight: 1.2 }}
             >
@@ -115,7 +107,10 @@ export default function Header() {
             </a>
             {/* Language Toggle */}
             <button
-              onClick={() => setLang(lang === 'en' ? 'fr' : 'en')}
+              onClick={() => {
+                console.debug('[Header] toggle clicked, before ->', lang);
+                setLang(lang === 'en' ? 'fr' : 'en');
+              }}
               className="flex items-center font-bold text-sm select-none focus:outline-none bg-transparent border-none p-1 sm:p-2 rounded hover:bg-sky-100 transition"
               aria-label="Toggle language"
             >
@@ -123,6 +118,8 @@ export default function Header() {
               <span className="mx-1 font-bold text-gray-500">/</span>
               <span className={lang === 'fr' ? 'text-yellow-400' : 'text-gray-700'}>FR</span>
             </button>
+            {/* Debug badge: shows current language (visible during troubleshooting) */}
+            <div className="ml-2 px-2 py-0.5 rounded-md text-xs font-semibold bg-gray-100 border border-gray-200 text-gray-700">{lang.toUpperCase()}</div>
           </div>
           
           {/* Hamburger Button (Mobile) - Only for navigation links */}

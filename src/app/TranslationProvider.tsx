@@ -28,12 +28,14 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
     // Check localStorage
     const storedLang = typeof window !== 'undefined' ? localStorage.getItem("lang") : null;
     if (storedLang === "en" || storedLang === "fr") {
+      console.debug('[TranslationProvider] init - storedLang', storedLang);
       setLangState(storedLang);
       return;
     }
     // Detect browser language
     if (typeof window !== 'undefined') {
       const browserLang = navigator.language || (navigator.languages && navigator.languages[0]);
+      console.debug('[TranslationProvider] init - browserLang', browserLang);
       if (browserLang && browserLang.toLowerCase().startsWith("fr")) {
         setLangState("fr");
       } else {
@@ -44,6 +46,7 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
 
   // Save language to localStorage when changed
   const setLang = (newLang: Lang) => {
+    console.debug('[TranslationProvider] setLang called ->', newLang);
     setLangState(newLang);
     if (typeof window !== 'undefined') {
       localStorage.setItem("lang", newLang);

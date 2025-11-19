@@ -1,99 +1,68 @@
 "use client";
-import { useState } from "react";
-import { motion } from "framer-motion";
-//import Header from "../components/Header";
+import { useEffect } from "react";
+import Link from "next/link";
 
-
-
-const jobs = [
-  {
-    title: "Job #1",
-    images: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
-
-    ],
-  },
-  {
-    title: "Job #2",
-    images: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
-
-    ],
-  },
+const projects = [
+  { id: "project-1", titleKey: "project_section_1", src: "/painter-covering.jpg" },
+  { id: "project-2", titleKey: "project_section_2", src: "/masking-tape.jpeg" },
+  { id: "project-3", titleKey: "project_section_3", src: "/wall-painting.jpg" },
+  { id: "project-4", titleKey: "project_section_4", src: "/paint-cleanup.jpg" },
 ];
 
+import { useTranslation } from "../TranslationProvider";
 
 export default function Achievements() {
-  // Track revealed images as a set of "jobIdx-imageIdx" keys
-  const [revealed, setRevealed] = useState<{ [key: string]: boolean }>({});
-
-  const handleReveal = (jIdx: number, iIdx: number) => {
-    setRevealed((prev) => ({
-      ...prev,
-      [`${jIdx}-${iIdx}`]: true,
-    }));
-  };
+  const { t } = useTranslation();
+  // Smooth-scroll to hash if present (works when navigating from main page /achievements#id)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const hash = window.location.hash;
+    if (!hash) return;
+    // Wait a tick to ensure layout is painted
+    setTimeout(() => {
+      const el = document.querySelector(hash) as HTMLElement | null;
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 50);
+  }, []);
 
   return (
     <main className="min-h-screen bg-white py-16 px-4">
-      {/* Under Construction Banner */}
-      <div className="flex flex-col items-center mb-8">
-        {/* Placeholder for excavator gif/icon */}
-        <span className="text-4xl mb-2">🚧</span>
-        <div className="text-xl font-bold text-yellow-600">Under Construction</div>
-      </div>
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-extrabold text-gray-900 text-center mb-10 blue-fill-hover">
-          Achievements
+          {t('project_gallery_title')}
         </h1>
-      </div>
-      <div className="max-w-6xl mx-auto space-y-16">
-        {jobs.map((job, jIdx) => (
-          <section key={jIdx}>
-            <h2 className="text-2xl font-bold text-gray-800 mb-2 blue-fill-hover mx-auto w-fit">{job.title}</h2>
-            <div className="mb-4 text-sm text-gray-600 italic text-center">
-              Wave your mouse over the images to reveal them!
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {job.images.map((img, iIdx) => {
-                const revealedKey = `${jIdx}-${iIdx}`;
-                return (
-                  <motion.div
-                    key={iIdx}
-                    initial={false}
-                    animate={{
-                      opacity: revealed[revealedKey] ? 1 : 0.08,
-                      scale: revealed[revealedKey] ? 1.03 : 0.92,
-                      filter: revealed[revealedKey] ? "none" : "brightness(0.8) grayscale(1)",
-                    }}
-                    transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
-                    className="rounded-xl overflow-hidden shadow-lg bg-gray-100 cursor-pointer"
-                    onMouseEnter={() => handleReveal(jIdx, iIdx)}
-                  >
-                    <img
-                      src={img}
-                      alt={`Job ${jIdx + 1} - Image ${iIdx + 1}`}
-                      className="w-full h-64 object-cover"
-                      draggable={false}
-                    />
-                  </motion.div>
-                );
-              })}
-            </div>
-          </section>
-        ))}
+
+        {/* Thumbnail grid at top (optional quick nav) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          {projects.map((p) => (
+            <a key={p.id} href={`#${p.id}`} className="block rounded-lg overflow-hidden shadow-lg">
+              <img src={p.src} alt={t(p.titleKey)} className="w-full h-40 object-cover" draggable={false} />
+              <div className="p-3 bg-white border-t">
+                <div className="font-bold text-gray-800 text-sm">{t(p.titleKey)}</div>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        {/* Detailed sections */}
+        <div className="space-y-16">
+          {projects.map((p) => (
+            <section id={p.id} key={p.id} className="rounded-lg overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                <div className="md:col-span-2">
+                  <img src={p.src} alt={t(p.titleKey)} className="w-full h-80 object-cover rounded-lg shadow" draggable={false} />
+                </div>
+                <div className="md:col-span-1">
+                  <h2 className="text-2xl font-bold mb-2">{t(p.titleKey)}</h2>
+                  <p className="text-gray-700 mb-4">Brief description of the work performed, materials used, and any notable challenges or techniques. This section can be expanded later with galleries or before/after sliders.</p>
+                  <Link href="/#quote" className="text-sky-600 font-semibold">{t('contact_cta') || 'Contact us about a similar project'}</Link>
+                </div>
+              </div>
+            </section>
+          ))}
+        </div>
       </div>
     </main>
   );

@@ -40,8 +40,8 @@ export default function Contact() {
             <div className="bg-sky-400 text-white p-8 rounded-xl shadow-xl text-center max-w-md w-full mx-4">
               <h3 className="text-2xl font-bold mb-4">
                 {lang === "fr"
-                  ? "Merci! Votre demande a été envoyée. Vous recevrez une réponse dans quelques jours."
-                  : "Thank you! Your request was sent. You should receive a response in a few days."}
+                  ? `Merci! ${t('response_time_message')}`
+                  : `Thank you! ${t('response_time_message')}`}
               </h3>
               <button
                 onClick={() => setFormSent(false)}

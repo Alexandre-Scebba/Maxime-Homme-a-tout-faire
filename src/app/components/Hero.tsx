@@ -5,7 +5,9 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Hero() {
   const { t } = useTranslation();
-  const initialOffset = -800;
+  // smaller offset keeps the image more centered and reduces visible gaps during parallax
+  // adjusted to -100 to move the image slightly lower on desktop
+  const initialOffset = -100;
   const sectionRef = useRef<HTMLElement>(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -29,7 +31,9 @@ export default function Hero() {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           if (sectionRef.current) {
-            const y = initialOffset + window.scrollY * 1.5;
+            // reduce the parallax multiplier so the background moves less aggressively
+            // use a smaller multiplier for a subtler effect
+            const y = initialOffset + window.scrollY * 0.45;
             sectionRef.current.style.backgroundPosition = `center ${y}px`;
           }
           ticking = false;
@@ -42,12 +46,12 @@ export default function Hero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMobile]);
 
-  return (
+    return (
     <section
       ref={sectionRef}
       className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: "url('/house-grass-res.jpg')",
+        backgroundImage: "url('/max-banner.jpg')",
         backgroundPosition: isMobile ? "center center" : `center ${initialOffset}px`,
         backgroundSize: "cover",
         backgroundAttachment: isMobile ? "scroll" : "fixed"

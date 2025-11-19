@@ -12,45 +12,45 @@ type Service = {
 const services: Record<"en" | "fr", Service[]> = {
   en: [
     {
-      title: "All Types of Excavation",
-      description: "Expert excavation services for any residential or commercial project.",
+      title: "Interior Painting",
+      description: "Professional interior painting services focused on clean work, precise finishes and minimal disruption to your home.",
       icon: Gem,
     },
     {
-      title: "Land Leveling & Sod Installation",
-      description: "Professional land grading and beautiful, durable sod installation for your property.",
+      title: "Wall Repairs",
+      description: "Minor wall repairs and surface preparation to ensure a smooth, long-lasting paint finish.",
       icon: Sprout,
     },
     {
-      title: "Retaining Walls & Rock Walls",
-      description: "Strong, attractive retaining walls and natural rock walls to support and enhance your landscape.",
+      title: "Caulking",
+      description: "Expert caulking for windows, trim and gaps to protect finishes and improve appearance.",
       icon: Layers3,
     },
     {
-      title: "Bulk Transport of Stone, Sand, and Topsoil",
-      description: "Fast, reliable delivery of stone, sand, topsoil, and other materials for your construction or landscaping needs.",
+      title: "Exterior Painting",
+      description: "Durable exterior painting using quality products to protect and refresh your property’s exterior surfaces.",
       icon: Truck,
     },
   ],
   fr: [
     {
-      title: "Excavation tous genres",
-      description: "Services d'excavation experts pour tous types de projets résidentiels ou commerciaux.",
+      title: "Peinture intérieure",
+      description: "Services professionnels de peinture intérieure axés sur la propreté, des finitions précises et un minimum de perturbation.",
       icon: Gem,
     },
     {
-      title: "Nivellement de terrain & pose de tourbe",
-      description: "Nivellement professionnel du terrain et installation de tourbe durable et esthétique pour votre propriété.",
+      title: "Réparations de murs",
+      description: "Réparations mineures des murs et préparation des surfaces pour garantir une finition de peinture lisse et durable.",
       icon: Sprout,
     },
     {
-      title: "Murs de soutènement & murs de roche",
-      description: "Murs de soutènement solides et murs de roche naturels pour soutenir et embellir votre aménagement paysager.",
+      title: "Calfeutrage",
+      description: "Calfeutrage professionnel pour fenêtres, moulures et joints afin de protéger les finitions et améliorer l'apparence.",
       icon: Layers3,
     },
     {
-      title: "Transport en vrac de pierre, sable et terre végétale",
-      description: "Livraison rapide et fiable de pierre, sable, terre végétale et autres matériaux pour vos besoins en construction ou en aménagement paysager.",
+      title: "Peinture extérieure",
+      description: "Peinture extérieure durable utilisant des produits de qualité pour protéger et rafraîchir les surfaces extérieures.",
       icon: Truck,
     },
   ],

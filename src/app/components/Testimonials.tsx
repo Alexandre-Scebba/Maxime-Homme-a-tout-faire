@@ -14,13 +14,13 @@ export default function Testimonials() {
             <p className="text-lg text-gray-700 mb-4">
               {t('testimonial_1')}
             </p>
-            <div className="font-bold text-sky-700">— Placeholder Name</div>
+            <div className="font-bold text-sky-700">— {t('testimonial_author_1')}</div>
           </div>
           <div className="bg-gray-50 rounded-xl p-6 shadow text-center">
             <p className="text-lg text-gray-700 mb-4">
               {t('testimonial_2')}
             </p>
-            <div className="font-bold text-sky-700">— Placeholder Name</div>
+            <div className="font-bold text-sky-700">— {t('testimonial_author_2')}</div>
           </div>
         </div>
       </div>
