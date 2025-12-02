@@ -57,9 +57,11 @@ export default function ContactInfo() {
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg flex justify-center items-center bg-white">
             <img
-              src="/globe.svg"
-              alt="Map placeholder"
-              style={{ width: '100%', maxWidth: 600, height: 300, objectFit: 'cover' }}
+              src="/montmap.jpeg"
+              alt="Service area map"
+              style={{ width: '100%', maxWidth: 800, height: 360, objectFit: 'cover' }}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

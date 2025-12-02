@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Facebook } from "lucide-react";
@@ -47,16 +46,16 @@ export default function Header() {
         <div className="w-full flex items-center justify-between py-4 px-4 lg:px-8 flex-wrap gap-2">
           {/* Logo - Home Button - Always visible */}
           <Link href="/" className="flex items-center flex-shrink-0 group" prefetch={false}>
-              <Image
-                src="/logo-char.jpg"
-                alt="Maxime Peinture logo"
-                width={56}
-                height={56}
-                className="bg-white border border-gray-200 shadow group-hover:opacity-80 transition w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-cover rounded-md"
-                priority
-              />
-              {/* visually-hidden brand name for accessibility (removed from visual header) */}
-              <span className="sr-only">Maxime Peinture</span>
+            {/* Use plain <img> to ensure the browser requests the exact transparent PNG file */}
+            <img
+              src="/logo.png?v=2"
+              alt="Maxime Peinture logo"
+              className="h-12 sm:h-14 md:h-16 object-contain"
+              loading="eager"
+              decoding="async"
+            />
+            {/* visually-hidden brand name for accessibility (removed from visual header) */}
+            <span className="sr-only">Maxime Peinture</span>
           </Link>
 
           {/* Center Navigation - Hidden on smaller screens */}
