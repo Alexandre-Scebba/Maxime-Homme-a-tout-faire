@@ -51,7 +51,7 @@ export default function Hero() {
       ref={sectionRef}
       className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: "url('/max-banner.jpg')",
+        backgroundImage: "url('/max-banner-4791.jpg')",
         backgroundPosition: isMobile ? "center center" : `center ${initialOffset}px`,
         backgroundSize: "cover",
         backgroundAttachment: isMobile ? "scroll" : "fixed"
