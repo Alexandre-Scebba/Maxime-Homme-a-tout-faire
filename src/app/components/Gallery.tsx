@@ -18,6 +18,12 @@ const galleryImages = [
     src: '/Finished/black-wall-lights-finished.jpg',
     titleKey: 'project_section_3',
   },
+
+  {
+    id: 'exterior-paint',
+    src: '/Exterior/exterior-stairs-1.jpg',
+    titleKey: 'exterior_paint',
+  },
 ];
 
 export default function Gallery() {
@@ -30,7 +36,7 @@ export default function Gallery() {
           {t('gallery_title')}
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {galleryImages.map((img) => (
             <Link
               key={img.id}

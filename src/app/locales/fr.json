@@ -32,18 +32,52 @@
   "project_section_2": "Préparation des surfaces",
   "project_section_3": "Application de la peinture",
   "project_section_4": "Nettoyage final",
+  "exterior_paint": "Peinture extérieure",
+
+
+  "product_lifemaster_title": "Dulux Lifemaster Intérieur Fini Mat-Lustré",
+  "product_lifemaster_desc": "Peinture intérieure à faible odeur et faible COV, idéale pour les espaces de vie où la qualité de l’air et une finition lavable sont importantes.",
+
+  "product_lifemaster_can_title": "Lifemaster Intérieur Coquille d’Œuf",
+  "product_lifemaster_can_desc": "Finition durable qui masque les petites imperfections et offre une excellente retouchabilité.",
+
+  "product_dul7700_title": "Dulux Ultra Blanc Intérieur (DUL7700)",
+  "product_dul7700_desc": "Peinture ultra blanche fiable pour murs et plafonds, offrant un résultat propre et lumineux qui s’agence à tous les décors.",
+
+  "product_bathroom_paint_title": "Peinture pour Salle de Bain Résistante à l’Humidité",
+  "product_bathroom_paint_desc": "Revêtement conçu pour les pièces humides, aidant à prévenir la moisissure sur des surfaces bien préparées.",
+
+  "product_kitchen_bath_title": "Dulux Cuisine & Salle de Bain",
+  "product_kitchen_bath_desc": "Peinture durable et lavable formulée pour résister à la vapeur, à l’humidité et au nettoyage fréquent.",
+
+  "product_xpert_primer_title": "Apprêt/Scellant Dulux X-PERT",
+  "product_xpert_primer_desc": "Apprêt à haute adhérence qui améliore la couverture, masque les réparations et assure une finition uniforme et durable.",
+
+  "product_cover_stain_title": "Apprêt Bloque-Taches Cover-Stain",
+  "product_cover_stain_desc": "Apprêt puissant conçu pour bloquer les taches d’eau, la fumée, la nicotine et autres marques tenaces.",
+
+  "product_mold_stop_title": "Apprêt Résistant à la Moisissure",
+  "product_mold_stop_desc": "Apprêt spécialisé formulé pour réduire la croissance de moisissure dans les zones humides ou problématiques.",
+
+  "product_metal_paint_title": "Peinture Protectrice pour Métal",
+  "product_metal_paint_desc": "Revêtement robuste pour surfaces métalliques, résistant à la rouille, à l’écaillage et aux intempéries.",
+
+  "product_metalclad_title": "Émail Protecteur Metalclad",
+  "product_metalclad_desc": "Émail de qualité industrielle utilisé sur les portes, rampes et surfaces extérieures en métal pour une durabilité maximale.",
+
+  "product_distinction_title": "Peinture Extérieure Distinction",
+  "product_distinction_desc": "Revêtement extérieur haut de gamme conçu pour préserver la couleur et la finition malgré les conditions climatiques difficiles.",
+
+  "product_xpert_paint_title": "Dulux X-PERT Intérieur/Extérieur",
+  "product_xpert_paint_desc": "Revêtement polyvalent offrant une excellente adhérence et durabilité sur plusieurs types de surfaces.",
+
+  "product_alex_caulk_title": "Calfeutrage Alex Flex",
+  "product_alex_caulk_desc": "Calfeutrage flexible et peinturable, idéal pour sceller les joints autour des moulures, fenêtres et portes avant la peinture.",
+
 
   "nav_products": "Produits utilisés",
 "products_title": "Produits que nous utilisons",
 "products_intro": "Nous travaillons avec des produits Dulux de qualité professionnelle, choisis pour leur durabilité et leurs belles finitions dans les maisons montréalaises.",
-"product_lifemaster_title": "Dulux Lifemaster intérieur faible lustre",
-"product_lifemaster_desc": "Peinture intérieure à faible odeur et faible COV, idéale pour les pièces de vie où la qualité de l'air et une finition lavable sont importantes.",
-"product_dul7700_title": "Dulux Ultra White intérieur (DUL7700)",
-"product_dul7700_desc": "Peinture intérieure blanc ultra fiable pour murs et plafonds, offrant un rendu propre et lumineux.",
-"product_kitchen_bath_title": "Dulux Cuisine & Salle de bain",
-"product_kitchen_bath_desc": "Revêtement résistant à l'humidité et à la moisissure, conçu pour les salles de bain et cuisines sur surfaces bien préparées.",
-"product_xpert_primer_title": "Apprêt-sealer à l'eau Dulux X-PERT",
-"product_xpert_primer_desc": "Apprêt à haute adhérence qui aide à masquer les réparations, améliorer le pouvoir couvrant et offrir une base durable.",
 "products_pro_note": "Produit de qualité professionnelle pour des résultats durables",
 
   "wall_repair_title": "Réparation des murs",
@@ -54,7 +88,6 @@
   "nav_home": "Accueil",
   "nav_services": "Services",
   "nav_gallery": "Galerie",
-  "nav_products": "Produits utilisés",
   "nav_achievements": "Réalisations",
   "nav_contact": "Contact",
   "nav_get_a_quote": "Soumission",
