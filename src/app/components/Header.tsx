@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Facebook } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "../TranslationProvider";
@@ -11,6 +10,9 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const phoneRaw = process.env.NEXT_PUBLIC_PHONE_NUMBER || "";
+  const phoneDisplay = process.env.NEXT_PUBLIC_PHONE_DISPLAY || "";
+
 
   return (
     <>
@@ -24,29 +26,38 @@ export default function Header() {
         </div>
         {/* Right side - Contact info */}
         <div className="flex items-center gap-4">
+        <a
+          href={`tel:${phoneRaw}`}
+          className="font-bold text-yellow-600 hover:text-yellow-700 transition"
+        >
+          Call Now: {phoneDisplay}
+        </a>
+
+          {/* Instagram */}
           <a
-            href="tel:0000000000"
-            className="font-bold text-yellow-600 hover:text-yellow-700 transition"
-          >
-            Call Now: 000-000-0000
-          </a>
-          <a
-            href="https://facebook.com/"
+            href="https://www.instagram.com/maximepienture/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sky-600 hover:text-blue-800"
-            aria-label="Facebook"
+            className="text-pink-600 hover:text-pink-700"
+            aria-label="Instagram"
           >
-            <Facebook className="w-5 h-5" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zM12 7c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm0 2c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" />
+            </svg>
           </a>
         </div>
       </div>
+
       {/* Main Header Bar */}
       <header className="w-full bg-gray-100 shadow-md sticky top-0 z-50">
         <div className="w-full flex items-center justify-between py-4 px-4 lg:px-8 flex-wrap gap-2">
           {/* Logo - Home Button - Always visible */}
           <Link href="/" className="flex items-center flex-shrink-0 group" prefetch={false}>
-            {/* Use plain <img> to ensure the browser requests the exact transparent PNG file */}
             <img
               src="/logo.png?v=2"
               alt="Maxime Peinture logo"
@@ -54,17 +65,16 @@ export default function Header() {
               loading="eager"
               decoding="async"
             />
-            {/* visually-hidden brand name for accessibility (removed from visual header) */}
             <span className="sr-only">Maxime Peinture</span>
           </Link>
 
           {/* Center Navigation - Hidden on smaller screens */}
           <nav className="hidden xl:flex space-x-6 absolute left-1/2 transform -translate-x-1/2">
             <Link
-              href={isHome ? "#home" : "/#home"}
+            href={isHome ? "#" : "/#"}
               className="text-base font-bold px-2 transition text-gray-900 hover:text-sky-600 hover:underline blue-fill-hover"
             >
-              {t('nav_home')}
+              {t("nav_home")}
             </Link>
             <Link
               href={isHome ? "#services" : "/#services"}
@@ -72,56 +82,55 @@ export default function Header() {
                 pathname === "/#services" ? "text-sky-600 underline" : "text-gray-900"
               } hover:text-sky-600 hover:underline blue-fill-hover`}
             >
-              {t('nav_services')}
+              {t("nav_services")}
             </Link>
             <Link
               href={isHome ? "#gallery" : "/#gallery"}
               className="text-base font-bold px-2 transition text-gray-900 hover:text-sky-600 hover:underline blue-fill-hover"
             >
-              {t('nav_gallery')}
+              {t("nav_gallery")}
             </Link>
             <Link
-              href="/achievements"
+              href={isHome ? "#products" : "/#products"}
               className="text-base font-bold px-2 transition text-gray-900 hover:text-sky-600 hover:underline blue-fill-hover"
             >
-              {t('nav_achievements')}
+              {t("nav_products")}
             </Link>
             <Link
               href={isHome ? "#contact" : "/#contact"}
               className="text-base font-bold px-2 transition text-gray-900 hover:text-sky-600 hover:underline blue-fill-hover"
             >
-              {t('nav_contact')}
+              {t("nav_contact")}
             </Link>
           </nav>
 
-          {/* Right side - Get Quote Button + Language Toggle - Always visible */}
+          {/* Right side - Get Quote Button + Language Toggle */}
           <div className="flex items-center gap-2 flex-shrink-0">
-            {/* Get a Quote Button - Always visible */}
             <a
               href={isHome ? "#quote" : "/#quote"}
               className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold py-2 px-3 sm:px-4 md:px-5 rounded-lg shadow hover:from-yellow-500 hover:to-yellow-700 transition text-center whitespace-nowrap text-sm sm:text-base"
               style={{ lineHeight: 1.2 }}
             >
-              {t('nav_get_a_quote')}
+              {t("nav_get_a_quote")}
             </a>
-            {/* Language Toggle */}
             <button
               onClick={() => {
-                console.debug('[Header] toggle clicked, before ->', lang);
-                setLang(lang === 'en' ? 'fr' : 'en');
+                console.debug("[Header] toggle clicked, before ->", lang);
+                setLang(lang === "en" ? "fr" : "en");
               }}
               className="flex items-center font-bold text-sm select-none focus:outline-none bg-transparent border-none p-1 sm:p-2 rounded hover:bg-sky-100 transition"
               aria-label="Toggle language"
             >
-              <span className={lang === 'en' ? 'text-yellow-400' : 'text-gray-700'}>EN</span>
+              <span className={lang === "en" ? "text-yellow-400" : "text-gray-700"}>EN</span>
               <span className="mx-1 font-bold text-gray-500">/</span>
-              <span className={lang === 'fr' ? 'text-yellow-400' : 'text-gray-700'}>FR</span>
+              <span className={lang === "fr" ? "text-yellow-400" : "text-gray-700"}>FR</span>
             </button>
-            {/* Debug badge: shows current language (visible during troubleshooting) */}
-            <div className="ml-2 px-2 py-0.5 rounded-md text-xs font-semibold bg-gray-100 border border-gray-200 text-gray-700">{lang.toUpperCase()}</div>
+            <div className="ml-2 px-2 py-0.5 rounded-md text-xs font-semibold bg-gray-100 border border-gray-200 text-gray-700">
+              {lang.toUpperCase()}
+            </div>
           </div>
-          
-          {/* Hamburger Button (Mobile) - Only for navigation links */}
+
+          {/* Hamburger Button (Mobile) */}
           <button
             className="xl:hidden flex items-center p-2 rounded hover:bg-sky-100 transition"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -130,6 +139,7 @@ export default function Header() {
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
+
         {/* Mobile Slide-out Menu */}
         <div
           className={`fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-[100] transform transition-transform duration-300 ${
@@ -149,38 +159,39 @@ export default function Header() {
               className="text-gray-900 text-lg font-medium hover:text-sky-600 transition"
               onClick={() => setMenuOpen(false)}
             >
-              {t('nav_home')}
+              {t("nav_home")}
             </a>
             <a
               href="#services"
               className="text-gray-900 text-lg font-medium hover:text-sky-600 transition"
               onClick={() => setMenuOpen(false)}
             >
-              {t('nav_services')}
+              {t("nav_services")}
             </a>
             <a
               href="#gallery"
               className="text-gray-900 text-lg font-medium hover:text-sky-600 transition"
               onClick={() => setMenuOpen(false)}
             >
-              {t('nav_gallery')}
+              {t("nav_gallery")}
             </a>
             <a
-              href="/achievements"
+              href="#products"
               className="text-gray-900 text-lg font-medium hover:text-sky-600 transition"
               onClick={() => setMenuOpen(false)}
             >
-              {t('nav_achievements')}
+              {t("nav_products")}
             </a>
             <a
               href="#contact"
               className="text-gray-900 text-lg font-medium hover:text-sky-600 transition"
               onClick={() => setMenuOpen(false)}
             >
-              {t('nav_contact')}
+              {t("nav_contact")}
             </a>
           </nav>
         </div>
+
         {/* Background overlay when menu is open */}
         {menuOpen && (
           <div

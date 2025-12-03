@@ -5,6 +5,7 @@ import Contact from "./components/ContactForm";
 import About from "./components/About";
 import ContactInfo from "./components/ContactInfo";
 import Testimonials from "./components/Testimonials";
+import Products from "./components/Products";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <About />
       <Services />
       <Gallery />
+      <Products />
       <Contact />
       <ContactInfo />
       <Testimonials />

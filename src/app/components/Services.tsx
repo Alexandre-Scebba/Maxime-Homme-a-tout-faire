@@ -1,5 +1,5 @@
 "use client";
-import { Gem, Sprout, Layers3, Truck } from "lucide-react";
+import { Gem, Sprout, Layers3, Truck, PaintRoller, BrickWall, PaintBucket, TriangleRight, Paintbrush } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from '../TranslationProvider';
 
@@ -14,12 +14,12 @@ const services: Record<"en" | "fr", Service[]> = {
     {
       title: "Interior Painting",
       description: "Professional interior painting services focused on clean work, precise finishes and minimal disruption to your home.",
-      icon: Gem,
+      icon: PaintRoller,
     },
     {
       title: "Wall Repairs",
       description: "Minor wall repairs and surface preparation to ensure a smooth, long-lasting paint finish.",
-      icon: Sprout,
+      icon: TriangleRight,
     },
     {
       title: "Caulking",
@@ -29,19 +29,19 @@ const services: Record<"en" | "fr", Service[]> = {
     {
       title: "Exterior Painting",
       description: "Durable exterior painting using quality products to protect and refresh your property’s exterior surfaces.",
-      icon: Truck,
+      icon: Paintbrush,
     },
   ],
   fr: [
     {
       title: "Peinture intérieure",
       description: "Services professionnels de peinture intérieure axés sur la propreté, des finitions précises et un minimum de perturbation.",
-      icon: Gem,
+      icon: PaintRoller,
     },
     {
       title: "Réparations de murs",
       description: "Réparations mineures des murs et préparation des surfaces pour garantir une finition de peinture lisse et durable.",
-      icon: Sprout,
+      icon: TriangleRight,
     },
     {
       title: "Calfeutrage",
@@ -51,7 +51,7 @@ const services: Record<"en" | "fr", Service[]> = {
     {
       title: "Peinture extérieure",
       description: "Peinture extérieure durable utilisant des produits de qualité pour protéger et rafraîchir les surfaces extérieures.",
-      icon: Truck,
+      icon: Paintbrush,
     },
   ],
 };
@@ -90,20 +90,20 @@ export default function Services() {
   }, [lang]);
 
   const bgImages = [
-    '/pipe.jpeg',
-    '/grass.jpeg',
-    '/hill.jpeg',
-    '/gravel.jpeg',
+    '/Services/interior painting.jpg',
+    '/Services/wall repair.jpg',
+    '/Services/caulking.png',
+    '/Services/outdoor iron painting.jpg',
   ];
 
   return (
-    <section id="services" className="py-16 bg-gradient-to-b from-sky-300 to-white">
+    <section id="services" className="scroll-mt-24 py-16 bg-gradient-to-b from-sky-300 to-white">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center shine-blue mx-auto w-fit">
           {t('services_title')}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {services[lang].map((service, i) => {
+     {services[lang].map((service, i) => {
   const Icon = service.icon;
   return (
     <div
@@ -114,37 +114,53 @@ export default function Services() {
           ? " scale-105 -translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.25)] z-20"
           : " group-hover:scale-105 group-hover:-translate-y-1 group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.25)]")
       }
-                style={{
-                  backgroundImage: `url('${bgImages[i]}')`,
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat'
-                }}
-              >
-                {/* Overlay for readability */}
-                {/* <div className="absolute inset-0 bg-black bg-opacity-40 z-0" /> */}
-                <div className="relative z-10 flex flex-col items-center justify-center h-full p-8 w-full">
-                  <Icon className="w-12 h-12 text-yellow-400 mb-2 drop-shadow-lg" />
-                  <h3
-                    className="text-xl font-bold mb-2 text-white text-center"
-                    style={{
-                      textShadow: "2px 4px 12px rgba(0,0,0,0.85), 0 1px 0 #000"
-                    }}
-                  >
-                    {service.title}
-                  </h3>
-                  <p
-                    className="text-white text-center"
-                    style={{
-                      textShadow: "2px 4px 12px rgba(0,0,0,0.85), 0 1px 0 #000"
-                    }}
-                  >
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+      style={{
+        backgroundImage: `url('${bgImages[i]}')`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+
+      {/* Subtle dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/20 z-0" />
+
+      {/* Text + icon */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full p-8 w-full">
+        <Icon className="w-12 h-12 text-yellow-400 mb-2 drop-shadow-lg" />
+
+        <h3
+          className="text-xl font-extrabold mb-2 text-white text-center"
+          style={{
+            textShadow: `
+              -1px -1px 2px rgba(0,0,0,0.9),
+               1px -1px 2px rgba(0,0,0,0.9),
+              -1px  1px 2px rgba(0,0,0,0.9),
+               1px  1px 2px rgba(0,0,0,0.9)
+            `
+          }}
+        >
+          {service.title}
+        </h3>
+
+        <p
+          className="text-white text-center"
+          style={{
+            textShadow: `
+              -1px -1px 2px rgba(0,0,0,0.9),
+               1px -1px 2px rgba(0,0,0,0.9),
+              -1px  1px 2px rgba(0,0,0,0.9),
+               1px  1px 2px rgba(0,0,0,0.9)
+            `
+          }}
+        >
+          {service.description}
+        </p>
+      </div>
+    </div>
+  );
+})}
+
         </div>
       </div>
     </section>

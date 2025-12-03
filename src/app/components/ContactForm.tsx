@@ -29,7 +29,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="quote" className="py-16 bg-gradient-to-b from-sky-100 to-white">
+    <section id="quote" className="scroll-mt-24 py-16 bg-gradient-to-b from-sky-100 to-white">
       <div className="max-w-2xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center shine-blue mx-auto w-fit">
           {t('request_quote')}

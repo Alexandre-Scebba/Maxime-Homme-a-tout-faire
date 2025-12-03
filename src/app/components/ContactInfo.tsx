@@ -5,7 +5,7 @@ export default function ContactInfo() {
     const { t } = useTranslation();
   const phone = (process.env.NEXT_PUBLIC_PHONE as string) || "000-000-0000";
     return (
-      <section id="contact" className="py-16 bg-gradient-to-t from-sky-100 to-white">
+      <section id="contact" className="scroll-mt-24 py-16 bg-gradient-to-t from-sky-100 to-white">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center shine-blue mx-auto w-fit">
             {t('contact_info_title') || 'Contact Information'}
@@ -23,13 +23,13 @@ export default function ContactInfo() {
 
             {/* Instagram */}
             <a
-              href="https://www.instagram.com/maximepeinture/"
+              href="https://www.instagram.com/maximepienture/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center bg-white rounded-xl shadow p-6 hover:shadow-2xl transition"
             >
               <span className="text-lg font-bold mb-2 text-gray-700">{t('instagram_label')}</span>
-              <span className="text-pink-600">@maximepeinture</span>
+              <span className="text-pink-600">@maximepienture</span>
             </a>
           </div>
           {/* Google Maps Embed */}
