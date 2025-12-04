@@ -5,7 +5,7 @@
   "hero_subtitle": "Professional interior and exterior painting services in the Greater Montreal Area",
   "request_quote": "Request a Free Quote",
   "about_title": "About Maxime Peinture",
-  "about_text": "Maxime Peinture brings 7 years of experience delivering clean, professional painting services across Montreal. We focus on quality finishes, reliable scheduling, and customer satisfaction.",
+  "about_text": "Maxime Peinture brings 10 years of experience delivering clean, professional painting services across Montreal. We focus on quality finishes, reliable scheduling, and customer satisfaction.",
   "services_title": "Our Services",
   "testimonials_title": "What Our Clients Say",
   "testimonial_1": "“The crew was professional and left the space spotless. Great finish — highly recommend.”",
@@ -33,52 +33,60 @@
   "project_section_4": "Final Cleanup",
   "exterior_paint": "Exterior Painting",
 
-
 "products_title": "Products We Use",
-"products_intro": "We work with professional-grade Dulux products chosen for durability, clean finishes, and reliable performance in Montreal homes.",
+"products_intro": "We work with professional-grade Dulux products chosen for durability, clean finishes, and reliable performance for your homes.",
 "products_pro_note": "Professional-grade product for long-lasting results",
 
+"product_lifemaster_title": "Dulux Lifemaster Interior Low-Sheen",
+"product_lifemaster_desc": "Low-odour, low-VOC interior paint; Ideal for lived-in spaces; Washable, smooth finish; Designed for healthier indoor air quality",
 
-  "product_lifemaster_title": "Dulux Lifemaster Interior Low-Sheen",
-  "product_lifemaster_desc": "Low-odour, low-VOC interior paint ideal for lived-in spaces where air quality and a smooth, washable finish matter.",
+"product_lifemaster_can_title": "Lifemaster Interior Eggshell",
+"product_lifemaster_can_desc": "Durable eggshell finish; Helps hide minor surface imperfections; Excellent touch-up capability; Smooth, washable surface",
 
-  "product_lifemaster_can_title": "Lifemaster Interior Eggshell",
-  "product_lifemaster_can_desc": "A durable eggshell finish that hides small surface imperfections and offers excellent touch-up capability.",
+"product_lifemaster_trim_title": "Dulux Lifemaster Interior Doors & Trim",
+"product_lifemaster_trim_desc": "Semi-gloss, durable finish for doors and trim; Excellent adhesion and leveling; Easy to clean and resistant to everyday wear; Provides a smooth, professional-looking surface",
 
-  "product_dul7700_title": "Dulux Ultra White Interior (DUL7700)",
-  "product_dul7700_desc": "A reliable ultra-white interior paint for ceilings and walls, giving a clean, bright result that pairs well with most decors.",
+"product_dul7700_title": "Dulux Ultra White Interior (DUL7700)",
+"product_dul7700_desc": "Ultra-white finish for ceilings and walls; Bright, clean coverage; Consistent application; Pairs well with most interior colour schemes",
 
-  "product_bathroom_paint_title": "Bathroom & Moisture-Resistant Paint",
-  "product_bathroom_paint_desc": "Moisture-resistant coating designed for bathrooms and humid areas, helping prevent mildew on properly prepared surfaces.",
+"product_bathroom_paint_title": "Bathroom & Moisture-Resistant Paint",
+"product_bathroom_paint_desc": "Designed for high-humidity areas; Helps resist mildew on properly prepared surfaces; Washable and durable; Smooth moisture-resistant finish",
 
-  "product_kitchen_bath_title": "Dulux Kitchen & Bath",
-  "product_kitchen_bath_desc": "Durable, washable paint formulated for kitchens and bathrooms where steam, moisture, and frequent cleaning are common.",
+"product_kitchen_bath_title": "Dulux Kitchen & Bath",
+"product_kitchen_bath_desc": "Formulated for moisture-heavy rooms; Durable, washable finish; Handles steam and frequent cleaning; Ideal for kitchens and bathrooms",
 
-  "product_xpert_primer_title": "Dulux X-PERT Waterborne Primer/Sealer",
-  "product_xpert_primer_desc": "High-adhesion primer that improves coverage, hides repairs, and ensures a smooth, long-lasting topcoat.",
+"product_xpert_primer_title": "Dulux X-PERT Waterborne Primer/Sealer",
+"product_xpert_primer_desc": "High-adhesion primer for smooth topcoat application; Improves coverage and hide; Seals repairs and patched areas; Ensures a long-lasting finish",
 
-  "product_cover_stain_title": "Cover-Stain Stain-Blocking Primer",
-  "product_cover_stain_desc": "A powerful stain-blocking primer used to seal water marks, smoke damage, and stubborn stains before painting.",
+"product_cover_stain_title": "Cover-Stain Stain-Blocking Primer",
+"product_cover_stain_desc": "Seals water stains and smoke damage; High hiding power; Excellent adhesion; Ideal for repainting problem areas",
 
-  "product_mold_stop_title": "Mold-Resistant Primer",
-  "product_mold_stop_desc": "Specialized primer formulated to resist mold and mildew growth in high-humidity or problem areas.",
+"product_mold_stop_title": "Mold-Resistant Primer",
+"product_mold_stop_desc": "Resists mold and mildew; Ideal for humid or problem areas; Helps maintain a clean, healthy surface; Enhances durability of the topcoat",
 
-  "product_metal_paint_title": "Direct-to-Metal Protective Paint",
-  "product_metal_paint_desc": "A tough, protective coating designed for metal surfaces, resisting rust, peeling, and outdoor exposure.",
+"product_metal_paint_title": "Direct-to-Metal Protective Paint",
+"product_metal_paint_desc": "Bonds directly to metal; Resists rust and corrosion; Durable outdoor performance; Ideal for railings, doors, and metal structures",
 
-  "product_metalclad_title": "Metalclad Protective Enamel",
-  "product_metalclad_desc": "Industrial-grade enamel used on metal doors, railings, and exterior surfaces for maximum durability and corrosion resistance.",
+"product_metalclad_title": "Metalclad Protective Enamel",
+"product_metalclad_desc": "Industrial-grade enamel; Maximum durability and corrosion resistance; Suitable for harsh environments; Smooth long-lasting finish on metal surfaces",
 
-  "product_distinction_title": "Distinction Exterior Paint",
-  "product_distinction_desc": "High-quality exterior coating designed to maintain colour and sheen over time, even in harsh weather conditions.",
+  "product_distinction_title": "Dulux Diamond Distinction Interior",
+  "product_distinction_desc": "High-hiding interior acrylic paint and primer in one; Designed for high-traffic residential or commercial areas; Excellent resistance to scuffs, stains, and everyday wear; Smooth, washable eggshell finish that stays looking fresh",
 
-  "product_xpert_paint_title": "Dulux X-PERT Interior/Exterior",
-  "product_xpert_paint_desc": "Versatile, reliable coating suitable for a variety of surfaces, offering excellent adhesion and durability.",
+"product_xpert_paint_title": "Dulux X-PERT Interior/Exterior",
+"product_xpert_paint_desc": "Versatile coating for multiple surfaces; Excellent adhesion indoors and outdoors; Durable performance; Smooth consistent finish",
 
-  "product_alex_caulk_title": "Alex Flex / Painters Caulk",
-  "product_alex_caulk_desc": "Flexible, paintable caulk ideal for sealing gaps around trim, windows, doors, and joints before painting.",
+"product_alex_caulk_title": "Alex Flex / Painters Caulk",
+"product_alex_caulk_desc": "Flexible, paintable sealant; Ideal for trim, windows, and doors; Fills gaps and cracks before painting; Ensures a cleaner, more professional finish",
 
+"product_gauging_plaster_title": "Gauging Plaster",
+"product_gauging_plaster_desc": "High-strength plaster for building up surfaces; Ideal for leveling deep repairs; Creates a solid base before final skim coats",
 
+"product_spackle_title": "Lightweight All-Purpose Spackle",
+"product_spackle_desc": "Ready-mixed filler for small repairs; Great for nail holes, dents and minor cracks; Sands easily for a smooth, paint-ready finish",
+
+"product_joint_tape_title": "Drywall Joint Tape",
+"product_joint_tape_desc": "Used for reinforcing drywall seams; Prevents cracking along joints; Creates a strong base before applying joint compound",
 
   "wall_repair_title": "Wall Repair",
   "surface_prep_and_wall_repair": "Surface Prep & Wall Repair",

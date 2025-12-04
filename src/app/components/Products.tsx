@@ -17,37 +17,28 @@ const products: Product[] = [
     img: "/Products/DLX_LifemasterInt_01_LowSheenEggshell_FR_HERO_1.png",
     titleKey: "product_lifemaster_title",
     descKey: "product_lifemaster_desc",
-    fallbackTitle: "Dulux Lifemaster Interior",
+    fallbackTitle: "Dulux Lifemaster Interior Low-Sheen",
     fallbackDesc:
-      "Low-odour, low-VOC interior paint for living spaces where a smooth, washable finish and air quality matter.",
+      "Low-odour, low-VOC interior paint; Ideal for lived-in spaces; Washable, smooth finish; Designed for healthier indoor air quality",
   },
-  // {
-  //   id: "lifemaster_can",
-  //   img: "/Products/lifemaster-paint.png",
-  //   titleKey: "product_lifemaster_can_title",
-  //   descKey: "product_lifemaster_can_desc",
-  //   fallbackTitle: "Lifemaster Interior Eggshell",
-  //   fallbackDesc:
-  //     "Everyday interior finish with a soft sheen that hides small surface defects and is easy to touch up.",
-  // },
   {
-    id: "dul7700",
-    img: "/Products/DUL7700-1GL-Z.jpg",
-    titleKey: "product_dul7700_title",
-    descKey: "product_dul7700_desc",
-    fallbackTitle: "Dulux Ultra White (DUL7700)",
+    id: "lifemaster_trim",
+    img: "/Products/Lifemaster-doors-and-trim.png",
+    titleKey: "product_lifemaster_trim_title",
+    descKey: "product_lifemaster_trim_desc",
+    fallbackTitle: "Dulux Lifemaster Interior Doors & Trim",
     fallbackDesc:
-      "A clean, bright white used for ceilings and walls to make spaces feel fresh and open.",
+      "Semi-gloss, durable finish for doors and trim; Excellent adhesion and leveling; Easy to clean and resistant to everyday wear; Provides a smooth, professional-looking surface",
   },
-  // {
-  //   id: "kitchen_bath",
-  //   img: "/Products/bathroom-paint.png",
-  //   titleKey: "product_bathroom_paint_title",
-  //   descKey: "product_bathroom_paint_desc",
-  //   fallbackTitle: "Bathroom & Moisture-Resistant Paint",
-  //   fallbackDesc:
-  //     "Specialized coating designed for humid rooms like bathrooms, helping resist moisture and mildew.",
-  // },
+  {
+    id: "distinction",
+    img: "/Products/distinction-paint.png",
+    titleKey: "product_distinction_title",
+    descKey: "product_distinction_desc",
+    fallbackTitle: "Distinction Exterior Paint",
+    fallbackDesc:
+      "Engineered for exterior durability; Maintains colour and sheen over time; Resists harsh weather; Strong protective coating",
+  },
   {
     id: "kitchen_bath_dulux",
     img: "/Products/Dulux-kitchen-and-bath-fr.png",
@@ -55,7 +46,16 @@ const products: Product[] = [
     descKey: "product_kitchen_bath_desc",
     fallbackTitle: "Dulux Kitchen & Bath",
     fallbackDesc:
-      "Durable, washable finish formulated for kitchens and bathrooms where steam and splashes are common.",
+      "Formulated for moisture-heavy rooms; Durable, washable finish; Handles steam and frequent cleaning; Ideal for kitchens and bathrooms",
+  },
+  {
+    id: "dul7700",
+    img: "/Products/DUL7700-1GL-Z.jpg",
+    titleKey: "product_dul7700_title",
+    descKey: "product_dul7700_desc",
+    fallbackTitle: "Dulux Ultra White Interior (DUL7700)",
+    fallbackDesc:
+      "Ultra-white finish for ceilings and walls; Bright, clean coverage; Consistent application; Pairs well with most interior colour schemes",
   },
   {
     id: "xpert_primer",
@@ -64,16 +64,16 @@ const products: Product[] = [
     descKey: "product_xpert_primer_desc",
     fallbackTitle: "Dulux X-PERT Waterborne Primer/Sealer",
     fallbackDesc:
-      "High-adhesion primer that helps hide repairs and gives the finish coat a more even, long-lasting base.",
+      "High-adhesion primer for smooth topcoat application; Improves coverage and hide; Seals repairs and patched areas; Ensures a long-lasting finish",
   },
   {
     id: "cover_stain",
     img: "/Products/cover-stain-paint.png",
     titleKey: "product_cover_stain_title",
     descKey: "product_cover_stain_desc",
-    fallbackTitle: "Stain-Blocking Primer",
+    fallbackTitle: "Cover-Stain Stain-Blocking Primer",
     fallbackDesc:
-      "Primer used to block water marks, nicotine, and other stubborn stains before painting.",
+      "Seals water stains and smoke damage; High hiding power; Excellent adhesion; Ideal for repainting problem areas",
   },
   {
     id: "mold_stop",
@@ -82,53 +82,55 @@ const products: Product[] = [
     descKey: "product_mold_stop_desc",
     fallbackTitle: "Mold-Resistant Primer",
     fallbackDesc:
-      "Helps inhibit mold and mildew growth on properly prepared surfaces in problem areas.",
+      "Resists mold and mildew; Ideal for humid or problem areas; Helps maintain a clean, healthy surface; Enhances durability of the topcoat",
   },
-  // {
-  //   id: "metalclad",
-  //   img: "/Products/metalclad-paint.png",
-  //   titleKey: "product_metalclad_title",
-  //   descKey: "product_metalclad_desc",
-  //   fallbackTitle: "Metalclad Protective Enamel",
-  //   fallbackDesc:
-  //     "Durable coating for metal surfaces, designed to resist rust, peeling, and the elements.",
-  // },
   {
     id: "metal_paint",
     img: "/Products/metal-paint.png",
     titleKey: "product_metal_paint_title",
     descKey: "product_metal_paint_desc",
-    fallbackTitle: "Direct-to-Metal Paint",
+    fallbackTitle: "Direct-to-Metal Protective Paint",
     fallbackDesc:
-      "Used on railings, doors and exterior metal to provide a tough, protective finish.",
+      "Bonds directly to metal; Resists rust and corrosion; Durable outdoor performance; Ideal for railings, doors, and metal structures",
   },
-  {
-    id: "distinction",
-    img: "/Products/distinction-paint.png",
-    titleKey: "product_distinction_title",
-    descKey: "product_distinction_desc",
-    fallbackTitle: "Distinction Exterior Coating",
-    fallbackDesc:
-      "High-quality exterior paint formulated to keep colour and sheen looking sharp over time.",
-  },
-  // {
-  //   id: "xpert_paint",
-  //   img: "/Products/x-pert-paint.png",
-  //   titleKey: "product_xpert_paint_title",
-  //   descKey: "product_xpert_paint_desc",
-  //   fallbackTitle: "Dulux X-PERT Interior/Exterior",
-  //   fallbackDesc:
-  //     "Versatile coating used where a tough, reliable finish is needed on a variety of surfaces.",
-  // },
   {
     id: "alex_caulk",
     img: "/Products/alex-caulk.png",
     titleKey: "product_alex_caulk_title",
     descKey: "product_alex_caulk_desc",
-    fallbackTitle: "Alex Flex / Caulking",
+    fallbackTitle: "Alex Flex / Painters Caulk",
     fallbackDesc:
-      "Flexible caulk used to seal gaps and joints around trim, windows and doors before painting.",
+      "Flexible, paintable sealant; Ideal for trim, windows, and doors; Fills gaps and cracks before painting; Ensures a cleaner, more professional finish",
   },
+  {
+  id: "gauging_plaster",
+  img: "/Products/plaster-bag.png",
+  titleKey: "product_gauging_plaster_title",
+  descKey: "product_gauging_plaster_desc",
+  fallbackTitle: "Gauging Plaster",
+  fallbackDesc:
+    "High-strength plaster for building up surfaces; Ideal for leveling deep repairs; Creates a solid base before final skim coats",
+},
+{
+  id: "spackle",
+  img: "/Products/plaster-bucket.png",
+  titleKey: "product_spackle_title",
+  descKey: "product_spackle_desc",
+  fallbackTitle: "Lightweight All-Purpose Spackle",
+  fallbackDesc:
+    "Ready-mixed filler for small repairs; Great for nail holes, dents and minor cracks; Sands easily for a smooth, paint-ready finish",
+},
+{
+  id: "joint_tape",
+  img: "/Products/tape.png",
+  titleKey: "product_joint_tape_title",
+  descKey: "product_joint_tape_desc",
+  fallbackTitle: "Drywall Joint Tape",
+  fallbackDesc:
+    "Used for reinforcing drywall seams; Prevents cracking along joints; Creates a strong base before applying joint compound",
+},
+
+
 ];
 
 export default function Products() {
@@ -146,45 +148,60 @@ export default function Products() {
 
         <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
           {t("products_intro") ||
-            "We work with professional-grade products chosen for durability, clean finishes, and reliable performance in Montreal homes."}
+            "We work with professional-grade Dulux products chosen for durability, clean finishes, and reliable performance for your homes."}
         </p>
 
-        {/* 2-column grid, text left / image right */}
         <div className="grid gap-8 md:grid-cols-2">
           {products.map((p) => {
             const title = t(p.titleKey) || p.fallbackTitle;
             const desc = t(p.descKey) || p.fallbackDesc;
+            const parts = desc
+              .split(";")
+              .map((s) => s.trim())
+              .filter(Boolean);
+            const hasBullets = parts.length > 1;
 
             return (
               <article
                 key={p.id}
-                className="flex flex-col md:flex-row items-center md:items-stretch gap-4 md:gap-6 bg-sky-50 rounded-xl shadow-lg p-4 md:p-6"
+                className="flex flex-col md:flex-row items-stretch justify-between gap-4 md:gap-6 bg-sky-50 rounded-xl shadow-lg p-4 md:p-6"
               >
-                {/* TEXT LEFT */}
+                {/* Text block */}
                 <div className="flex-1 text-center md:text-left flex flex-col justify-center">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     {title}
                   </h3>
-                  <p className="text-gray-700 text-sm sm:text-base mb-3">
-                    {desc}
-                  </p>
+
+                  {hasBullets ? (
+                    <ul className="list-disc pl-5 text-gray-700 text-sm sm:text-base mb-3 text-left">
+                      {parts.map((line, i) => (
+                        <li key={i}>{line}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-gray-700 text-sm sm:text-base mb-3">
+                      {desc}
+                    </p>
+                  )}
+
                   <p className="text-xs uppercase tracking-wide text-sky-700 font-semibold">
                     {t("products_pro_note") ||
                       "Professional-grade product for long-lasting results"}
                   </p>
                 </div>
 
-                {/* IMAGE RIGHT */}
-                <div className="w-full md:w-[260px] flex justify-center">
-                  <div className="bg-white rounded-xl shadow-md p-4 max-w-[260px] w-full flex items-center justify-center">
-                    <img
-                      src={p.img}
-                      alt={title}
-                      className="w-full h-48 md:h-56 object-contain"
-                      draggable={false}
-                    />
-                  </div>
+           {/* Image block */}
+              <div className="w-full md:w-auto flex justify-center md:justify-end items-center">
+                <div className="bg-white rounded-xl shadow-md p-3 max-w-[220px] w-full">
+                  <img
+                    src={p.img}
+                    alt={title}
+                    className="w-full h-40 object-contain"
+                    draggable={false}
+                  />
                 </div>
+              </div>
+
               </article>
             );
           })}

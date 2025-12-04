@@ -5,7 +5,7 @@
   "hero_subtitle": "Services professionnels de peinture intérieure et extérieure dans la grande région de Montréal",
   "request_quote": "Demander une soumission gratuite",
   "about_title": "À propos de Maxime Peinture",
-  "about_text": "Maxime Peinture apporte 7 ans d'expérience en fournissant des services de peinture propres et professionnels à travers Montréal. Nous privilégions une finition de qualité, une planification fiable et la satisfaction du client.",
+  "about_text": "Maxime Peinture apporte 10 ans d'expérience en fournissant des services de peinture propres et professionnels à travers Montréal. Nous privilégions une finition de qualité, une planification fiable et la satisfaction du client.",
   "services_title": "Nos Services",
   "testimonials_title": "Ce que disent nos clients",
   "testimonial_1": "« Équipe professionnelle et chantier laissé propre. Finition de grande qualité. »",
@@ -35,49 +35,60 @@
   "exterior_paint": "Peinture extérieure",
 
 
-  "product_lifemaster_title": "Dulux Lifemaster Intérieur Fini Mat-Lustré",
-  "product_lifemaster_desc": "Peinture intérieure à faible odeur et faible COV, idéale pour les espaces de vie où la qualité de l’air et une finition lavable sont importantes.",
+"product_lifemaster_title": "Dulux Lifemaster Intérieur Fini Mat-Lustré",
+"product_lifemaster_desc": "Faible odeur et faible COV; Idéale pour les espaces de vie occupés; Lavable avec une finition lisse; Conçue pour une meilleure qualité de l’air intérieur",
 
-  "product_lifemaster_can_title": "Lifemaster Intérieur Coquille d’Œuf",
-  "product_lifemaster_can_desc": "Finition durable qui masque les petites imperfections et offre une excellente retouchabilité.",
+"product_lifemaster_can_title": "Lifemaster Intérieur Coquille d’Œuf",
+"product_lifemaster_can_desc": "Finition durable; Aide à masquer les petites imperfections; Excellente retouchabilité; Surface lavable et uniforme",
 
-  "product_dul7700_title": "Dulux Ultra Blanc Intérieur (DUL7700)",
-  "product_dul7700_desc": "Peinture ultra blanche fiable pour murs et plafonds, offrant un résultat propre et lumineux qui s’agence à tous les décors.",
+"product_lifemaster_trim_title": "Dulux Lifemaster Intérieur Portes & Moulures",
+"product_lifemaster_trim_desc": "Fini semi-lustré durable pour portes et moulures; Excellente adhérence et nivellement; Facile à nettoyer et résistant à l’usure; Offre une surface lisse et professionnelle",
 
-  "product_bathroom_paint_title": "Peinture pour Salle de Bain Résistante à l’Humidité",
-  "product_bathroom_paint_desc": "Revêtement conçu pour les pièces humides, aidant à prévenir la moisissure sur des surfaces bien préparées.",
+"product_dul7700_title": "Dulux Ultra Blanc Intérieur (DUL7700)",
+"product_dul7700_desc": "Blanc ultra lumineux pour murs et plafonds; Couverture propre et uniforme; S'agence avec la plupart des décors; Application constante et fiable",
 
-  "product_kitchen_bath_title": "Dulux Cuisine & Salle de Bain",
-  "product_kitchen_bath_desc": "Peinture durable et lavable formulée pour résister à la vapeur, à l’humidité et au nettoyage fréquent.",
+"product_bathroom_paint_title": "Peinture pour Salle de Bain Résistante à l’Humidité",
+"product_bathroom_paint_desc": "Conçue pour les zones très humides; Aide à prévenir la moisissure sur des surfaces bien préparées; Lavable et durable; Finition résistante à l’humidité",
 
-  "product_xpert_primer_title": "Apprêt/Scellant Dulux X-PERT",
-  "product_xpert_primer_desc": "Apprêt à haute adhérence qui améliore la couverture, masque les réparations et assure une finition uniforme et durable.",
+"product_kitchen_bath_title": "Dulux Cuisine & Salle de Bain",
+"product_kitchen_bath_desc": "Formulée pour les pièces exposées à la vapeur; Finition durable et lavable; Résiste à l’humidité et au nettoyage fréquent; Idéale pour cuisines et salles de bain",
 
-  "product_cover_stain_title": "Apprêt Bloque-Taches Cover-Stain",
-  "product_cover_stain_desc": "Apprêt puissant conçu pour bloquer les taches d’eau, la fumée, la nicotine et autres marques tenaces.",
+"product_xpert_primer_title": "Apprêt/Scellant Dulux X-PERT",
+"product_xpert_primer_desc": "Adhérence élevée pour une application uniforme; Améliore la couverture; Scelle les réparations; Assure une finition durable et lisse",
 
-  "product_mold_stop_title": "Apprêt Résistant à la Moisissure",
-  "product_mold_stop_desc": "Apprêt spécialisé formulé pour réduire la croissance de moisissure dans les zones humides ou problématiques.",
+"product_cover_stain_title": "Apprêt Bloque-Taches Cover-Stain",
+"product_cover_stain_desc": "Bloque les taches d’eau et de fumée; Pouvoir masquant élevé; Adhérence fiable; Idéal pour traiter les zones problématiques avant peinture",
 
-  "product_metal_paint_title": "Peinture Protectrice pour Métal",
-  "product_metal_paint_desc": "Revêtement robuste pour surfaces métalliques, résistant à la rouille, à l’écaillage et aux intempéries.",
+"product_mold_stop_title": "Apprêt Résistant à la Moisissure",
+"product_mold_stop_desc": "Aide à prévenir la croissance de moisissure; Conçu pour les zones humides; Améliore la durabilité du revêtement de finition; Maintient une surface propre et stable",
 
-  "product_metalclad_title": "Émail Protecteur Metalclad",
-  "product_metalclad_desc": "Émail de qualité industrielle utilisé sur les portes, rampes et surfaces extérieures en métal pour une durabilité maximale.",
+"product_metal_paint_title": "Peinture Protectrice pour Métal",
+"product_metal_paint_desc": "S’applique directement sur le métal; Résiste à la rouille et à la corrosion; Performance extérieure durable; Parfaite pour rampes, portes et structures métalliques",
 
-  "product_distinction_title": "Peinture Extérieure Distinction",
-  "product_distinction_desc": "Revêtement extérieur haut de gamme conçu pour préserver la couleur et la finition malgré les conditions climatiques difficiles.",
+"product_metalclad_title": "Émail Protecteur Metalclad",
+"product_metalclad_desc": "Émail de qualité industrielle; Durabilité maximale contre les intempéries; Résistance élevée à la corrosion; Finition lisse et durable pour surfaces métalliques",
 
-  "product_xpert_paint_title": "Dulux X-PERT Intérieur/Extérieur",
-  "product_xpert_paint_desc": "Revêtement polyvalent offrant une excellente adhérence et durabilité sur plusieurs types de surfaces.",
+  "product_distinction_title": "Peinture Intérieure Dulux Diamant Distinction",
+  "product_distinction_desc": "Peinture / apprêt tout-en-un à haut pouvoir couvrant; Conçue pour les zones à fort passage et les projets exigeants; Excellente résistance aux égratignures, taches et frottements; Finition coquille d’œuf lavable qui garde un aspect soigné",
 
-  "product_alex_caulk_title": "Calfeutrage Alex Flex",
-  "product_alex_caulk_desc": "Calfeutrage flexible et peinturable, idéal pour sceller les joints autour des moulures, fenêtres et portes avant la peinture.",
+"product_xpert_paint_title": "Dulux X-PERT Intérieur/Extérieur",
+"product_xpert_paint_desc": "Revêtement polyvalent; Excellente adhérence sur plusieurs surfaces; Durabilité intérieure et extérieure; Finition uniforme et fiable",
 
+"product_alex_caulk_title": "Calfeutrage Alex Flex",
+"product_alex_caulk_desc": "Calfeutrage flexible et peinturable; Idéal pour joints et fissures; Parfait pour moulures, fenêtres et portes; Assure une finition plus propre avant peinture",
+
+"product_gauging_plaster_title": "Plâtre de Gâchage",
+"product_gauging_plaster_desc": "Plâtre haute résistance pour reconstituer les surfaces; Idéal pour niveler les réparations profondes; Crée une base solide avant les couches de finition",
+
+"product_spackle_title": "Enduit Tout Usage Léger",
+"product_spackle_desc": "Enduit prêt à l’emploi pour petites réparations; Idéal pour les trous de clous, bosses et petites fissures; Se ponce facilement pour une surface lisse, prête à peindre",
+
+"product_joint_tape_title": "Ruban à Joints pour Gypse",
+"product_joint_tape_desc": "Utilisé pour renforcer les joints de gypse; Aide à prévenir les fissures; Crée une base solide avant l’application du composé à joints",
 
   "nav_products": "Produits utilisés",
 "products_title": "Produits que nous utilisons",
-"products_intro": "Nous travaillons avec des produits Dulux de qualité professionnelle, choisis pour leur durabilité et leurs belles finitions dans les maisons montréalaises.",
+"products_intro": "Nous travaillons avec des produits Dulux de qualité professionnelle, choisis pour leur durabilité et leurs belles finitions dans votre maisons.",
 "products_pro_note": "Produit de qualité professionnelle pour des résultats durables",
 
   "wall_repair_title": "Réparation des murs",
