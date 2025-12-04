@@ -1,5 +1,5 @@
 "use client";
-import { Gem, Sprout, Layers3, Truck, PaintRoller, BrickWall, PaintBucket, TriangleRight, Paintbrush } from "lucide-react";
+import { Layers3, PaintRoller, TriangleRight, Paintbrush } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from '../TranslationProvider';
 

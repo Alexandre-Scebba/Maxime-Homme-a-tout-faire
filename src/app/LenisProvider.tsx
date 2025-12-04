@@ -32,11 +32,11 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
 
         // Start RAF loop
         rafId = requestAnimationFrame(loop);
-      } catch (err) {
+      } catch (_err) {
         // If Lenis fails to initialize, don't block the app.
         // Log in dev only.
         // eslint-disable-next-line no-console
-        console.warn("Lenis initialization failed:", err);
+        console.warn("Lenis initialization failed:", _err);
       }
     };
 
