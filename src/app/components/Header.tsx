@@ -125,9 +125,9 @@ export default function Header() {
               <span className="mx-1 font-bold text-gray-500">/</span>
               <span className={lang === "fr" ? "text-yellow-400" : "text-gray-700"}>FR</span>
             </button>
-            <div className="ml-2 px-2 py-0.5 rounded-md text-xs font-semibold bg-gray-100 border border-gray-200 text-gray-700">
+            {/* <div className="ml-2 px-2 py-0.5 rounded-md text-xs font-semibold bg-gray-100 border border-gray-200 text-gray-700">
               {lang.toUpperCase()}
-            </div>
+            </div> */}
           </div>
 
           {/* Hamburger Button (Mobile) */}
@@ -136,7 +136,14 @@ export default function Header() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
-            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {menuOpen ? (
+              <X className="w-6 h-6 text-gray-800" />
+            ) : (
+              <Menu className="w-6 h-6 text-gray-800" />
+            )}
+            <span className="ml-2 text-sm font-medium text-gray-800 select-none">
+              {menuOpen ? "Close" : "Menu"}
+            </span>
           </button>
         </div>
 

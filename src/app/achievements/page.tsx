@@ -146,15 +146,20 @@ export default function Achievements() {
         </h1>
 
         <p className="text-center text-gray-600 mb-8">
-          Click any section or image to enlarge — use left/right or arrows to
-          navigate.
+          {t("gallery_instruction")}
         </p>
 
         {categories.map((cat, ci) => (
-          <section id={cat.id} key={cat.id} className="mb-10">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          <section 
+          id={cat.id} 
+          key={cat.id} 
+          className="mb-10 scroll-mt-32">
+            <h2 className="text-2xl font-bold mb-4 shine-blue-slow">
               {t(cat.titleKey) || cat.titleKey}
             </h2>
+            <p className="text-gray-900 max-w-2xl mb-6">
+              {t(`${cat.titleKey}_desc`) || ""}
+            </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
               {cat.imgs.map((src, ii) => (
                 <button
@@ -180,9 +185,38 @@ export default function Achievements() {
             onClick={close}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
           >
+            {/* Left navigation - fixed to window edge */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelected((s) =>
+                  s === null ? 0 : Math.max(0, s - 1)
+                );
+              }}
+              aria-label="Previous"
+              className="fixed left-0 top-0 h-full w-20 sm:w-28 z-40 flex items-center justify-center text-white transition-colors duration-150 hover:bg-white/10"
+            >
+              <span className="text-4xl">‹</span>
+            </button>
+
+            {/* Right navigation - fixed to window edge */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelected((s) =>
+                  s === null ? 0 : Math.min(flat.length - 1, s + 1)
+                );
+              }}
+              aria-label="Next"
+              className="fixed right-0 top-0 h-full w-20 sm:w-28 z-40 flex items-center justify-center text-white transition-colors duration-150 hover:bg-white/10"
+            >
+              <span className="text-4xl">›</span>
+            </button>
+
+            {/* Image container - centered */}
             <div
               onClick={(e) => e.stopPropagation()}
-              className="max-w-[90vw] max-h-[90vh] relative"
+              className="max-w-[90vw] max-h-[90vh] relative z-50"
             >
               <button
                 onClick={close}
@@ -191,44 +225,12 @@ export default function Achievements() {
                 ✕
               </button>
 
-              <div className="flex items-center justify-center gap-4">
-                <div className="flex-shrink-0 flex items-center justify-center">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelected((s) =>
-                        s === null ? 0 : Math.max(0, s - 1)
-                      );
-                    }}
-                    aria-label="Previous"
-                    className="h-[80vh] w-20 sm:w-28 flex items-center justify-center text-white transition-colors duration-150 hover:bg-white/10 rounded-l-md"
-                  >
-                    <span className="text-4xl">‹</span>
-                  </button>
-                </div>
-
-                <div className="flex items-center justify-center">
-                  <img
-                    src={flat[selected].src}
-                    alt={flat[selected].title || `Image ${selected + 1}`}
-                    className="max-w-[80vw] max-h-[80vh] object-contain rounded-md"
-                  />
-                </div>
-
-                <div className="flex-shrink-0 flex items-center justify-center">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelected((s) =>
-                        s === null ? 0 : Math.min(flat.length - 1, s + 1)
-                      );
-                    }}
-                    aria-label="Next"
-                    className="h-[80vh] w-20 sm:w-28 flex items-center justify-center text-white transition-colors duration-150 hover:bg-white/10 rounded-r-md"
-                  >
-                    <span className="text-4xl">›</span>
-                  </button>
-                </div>
+              <div className="flex items-center justify-center">
+                <img
+                  src={flat[selected].src}
+                  alt={flat[selected].title || `Image ${selected + 1}`}
+                  className="max-w-[80vw] max-h-[80vh] object-contain rounded-md"
+                />
               </div>
 
               <div className="mt-3 text-center text-white font-semibold">

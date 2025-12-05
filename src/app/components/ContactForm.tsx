@@ -59,32 +59,96 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className="bg-white rounded-xl shadow-lg p-8 flex flex-col space-y-5"
           >
-            <input
-              name="user_name"
-              type="text"
-              placeholder={t('your_name')}
-              className="border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:border-sky-400 placeholder-gray-400"
-              required
-            />
-            <input
-              name="user_email"
-              type="email"
-              placeholder={t('your_email')}
-              className="border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:border-sky-400 placeholder-gray-400"
-              required
-            />
-            <input
-              name="user_phone"
-              type="tel"
-              placeholder={t('your_phone')}
-              className="border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:border-sky-400 placeholder-gray-400"
-            />
-            <textarea
-              name="message"
-              placeholder={t('how_can_we_help')}
-              className="border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:border-sky-400 resize-none min-h-[100px] placeholder-gray-400"
-              required
-            />
+            <label className="block">
+              <span className="text-sm font-medium text-gray-700">
+                {t('your_name')}
+                <span className="text-red-500">*</span>
+              </span>
+              <input
+                name="user_name"
+                type="text"
+                placeholder={t('your_name')}
+                className="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:border-sky-400 placeholder-gray-400"
+                required
+                aria-required
+              />
+            </label>
+
+            <label className="block">
+              <span className="text-sm font-medium text-gray-700">
+                {t('email_label')}
+                <span className="text-red-500">*</span>
+              </span>
+              <input
+                name="user_email"
+                type="email"
+                placeholder={t('email_placeholder')}
+                className="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:border-sky-400 placeholder-gray-400"
+                required
+                aria-required
+              />
+            </label>
+
+            <label className="block">
+              <span className="text-sm font-medium text-gray-700">{t('your_phone')}</span>
+              <input
+                name="user_phone"
+                type="tel"
+                placeholder={t('your_phone')}
+                className="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:border-sky-400 placeholder-gray-400"
+              />
+            </label>
+
+            <label className="block">
+              <span className="text-sm font-medium text-gray-700">
+                {t('how_can_we_help')}
+                <span className="text-red-500">*</span>
+              </span>
+              <textarea
+                name="message"
+                placeholder={t('how_can_we_help')}
+                className="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:border-sky-400 resize-none min-h-[100px] placeholder-gray-400"
+                required
+                aria-required
+              />
+            </label>
+
+            {/* Optional: square footage */}
+            <label className="block">
+              <span className="text-sm font-medium text-gray-700">{t('square_footage')}</span>
+              <input
+                name="square_footage"
+                type="text"
+                placeholder={t('square_footage_placeholder')}
+                className="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:border-sky-400 placeholder-gray-400"
+              />
+            </label>
+
+            {/* Optional: number of rooms */}
+            <label className="block">
+              <span className="text-sm font-medium text-gray-700">{t('num_rooms')}</span>
+              <input
+                name="num_rooms"
+                type="number"
+                min={0}
+                placeholder={t('num_rooms_placeholder')}
+                className="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:border-sky-400 placeholder-gray-400"
+              />
+            </label>
+
+            {/* Major wall repair radio */}
+            <fieldset className="flex items-center gap-4">
+              <legend className="text-sm font-medium text-gray-700">{t('major_wall_repair')}</legend>
+              <label className="flex items-center gap-2">
+                <input type="radio" name="major_wall_repair" value="yes" className="h-4 w-4 accent-sky-600" />
+                <span className="text-sm text-gray-800 font-medium">{t('yes')}</span>
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="radio" name="major_wall_repair" value="no" defaultChecked className="h-4 w-4 accent-sky-600" />
+                <span className="text-sm text-gray-800 font-medium">{t('no')}</span>
+              </label>
+            </fieldset>
+
             {/* Hidden language field */}
             <input type="hidden" name="site_lang" value={lang} />
             <button

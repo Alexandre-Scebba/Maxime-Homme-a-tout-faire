@@ -126,6 +126,5 @@ body {
   -webkit-text-fill-color: transparent;
   animation: shine 8s linear infinite; /* much slower - every 8 seconds */
   display: block;
-  text-align: center;
 }
 
