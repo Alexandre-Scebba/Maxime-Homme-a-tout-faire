@@ -69,7 +69,7 @@ export default function Header() {
           </Link>
 
           {/* Center Navigation - Hidden on smaller screens */}
-          <nav className="hidden xl:flex space-x-6 absolute left-1/2 transform -translate-x-1/2">
+          <nav className="hidden lg:flex space-x-6 absolute left-1/2 transform -translate-x-1/2">
             <Link
             href={isHome ? "#" : "/#"}
               className="text-base font-bold px-2 transition text-gray-900 hover:text-sky-600 hover:underline blue-fill-hover"
@@ -132,7 +132,7 @@ export default function Header() {
 
           {/* Hamburger Button (Mobile) */}
           <button
-            className="xl:hidden flex items-center p-2 rounded hover:bg-sky-100 transition"
+            className="lg:hidden flex items-center p-2 rounded hover:bg-sky-100 transition"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
@@ -202,7 +202,7 @@ export default function Header() {
         {/* Background overlay when menu is open */}
         {menuOpen && (
           <div
-            className="fixed inset-0 bg-black/20 z-[99] xl:hidden"
+            className="fixed inset-0 bg-black/20 z-[99] lg:hidden"
             onClick={() => setMenuOpen(false)}
             aria-hidden
           />
