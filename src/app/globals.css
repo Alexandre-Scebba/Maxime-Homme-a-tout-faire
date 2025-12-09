@@ -128,3 +128,55 @@ body {
   display: block;
 }
 
+@keyframes wavy-shine {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+/* Wavey sword-like shine effect */
+.instagram-shine {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.instagram-shine svg {
+  position: relative;
+  z-index: 1;
+}
+
+.instagram-shine path {
+  fill: #111827;
+  transition: fill 0.3s ease;
+}
+
+.instagram-shine:hover path {
+  fill: #ec4899; /* pink */
+}
+
+.instagram-shine svg {
+  animation: instagram-shine-effect 4s ease-in-out infinite;
+}
+
+@keyframes instagram-shine-effect {
+  0% {
+    filter: drop-shadow(0 0 0px transparent);
+  }
+  25% {
+    filter: drop-shadow(0 0 1px rgba(236, 72, 153, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 2px rgba(236, 72, 153, 0.6)) drop-shadow(0 0 1px rgba(236, 72, 153, 0.3));
+  }
+  75% {
+    filter: drop-shadow(0 0 1px rgba(236, 72, 153, 0.4));
+  }
+  100% {
+    filter: drop-shadow(0 0 0px transparent);
+  }
+}
+

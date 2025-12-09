@@ -102,6 +102,22 @@ export default function Header() {
             >
               {t("nav_contact")}
             </Link>
+            <a
+              href="https://www.instagram.com/maximepienture/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition flex items-center px-2 ml-1 -mt-1 instagram-shine hover:instagram-shine-pink"
+              aria-label="Instagram"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-7 h-7 hover:fill-pink-600"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zM12 7c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm0 2c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" />
+              </svg>
+            </a>
           </nav>
 
           {/* Right side - Get Quote Button + Language Toggle */}
@@ -195,6 +211,23 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
             >
               {t("nav_contact")}
+            </a>
+            <a
+              href="https://www.instagram.com/maximepienture/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-600 hover:text-pink-700 transition flex items-center gap-2 instagram-shine"
+              aria-label="Instagram"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zM12 7c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm0 2c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" />
+              </svg>
+              Instagram
             </a>
           </nav>
         </div>
