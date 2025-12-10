@@ -7,6 +7,8 @@ import LenisProvider from "./LenisProvider";
 import BackToTopButton from "./components/BackToTopButton";
 import Footer from "./components/Footer";
 
+const SITE_URL = "https://maxime-homme-a-tout-faire.vercel.app/";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -18,39 +20,45 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Placeholder Company",
-  description: "Professional excavation, drainage & turf services.",
+  title: "Maxime Peinture | Peintre à Montréal & Laval",
+  description:
+    "Peintres professionnels à Montréal et Laval pour appartements, condos et maisons. Peinture intérieure et extérieure, réparation de gypse, tirage de joints et préparation de surface soignée.",
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
-    title: "Placeholder Company",
-    description: "Professional excavation, drainage & turf services.",
-    url: "https://www.yourdomain.com",
-    siteName: "Placeholder Company",
+    title: "Maxime Peinture – Peinture intérieure et extérieure à Montréal et Laval",
+    description:
+      "Service de peinture professionnelle pour appartements, condos et maisons à Montréal et Laval. Finitions propres, protection complète des surfaces et réparations de gypse.",
+    url: SITE_URL,
+    siteName: "Maxime Peinture",
     images: [
       {
-        url: "/file.svg",
-        width: 800,
-        height: 600,
+        url: "/file.svg", 
+        width: 1200,
+        height: 630,
+        alt: "Projet de peinture intérieure réalisé par Maxime Peinture à Montréal",
       },
     ],
-    locale: "en_CA",
+    locale: "fr_CA",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Placeholder Company",
-    description: "Professional excavation, drainage & turf services.",
+    title: "Maxime Peinture – Peinture intérieure et extérieure à Montréal et Laval",
+    description:
+      "Peintres professionnels pour vos projets résidentiels à Montréal et Laval : murs, plafonds, boiseries, gypse et tirage de joints.",
     images: ["/file.svg"],
   },
-  // Optionally add other meta here
 };
-
+ 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

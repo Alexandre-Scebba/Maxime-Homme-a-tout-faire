@@ -1,10 +1,17 @@
 "use client";
-import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 import en from "./locales/en.json";
 import fr from "./locales/fr.json";
 
-const translations: Record<"en" | "fr", Record<string, string>> = { en, fr };
 type Lang = "en" | "fr";
+
+const translations: Record<Lang, Record<string, string>> = { en, fr };
 
 const TranslationContext = createContext<{
   lang: Lang;
@@ -16,39 +23,40 @@ const TranslationContext = createContext<{
   t: (key) => key,
 });
 
-export function useTranslation() {
-  return useContext(TranslationContext);
-}
-
 export function TranslationProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("fr");
 
-  // On mount, check localStorage or browser language
   useEffect(() => {
-    // Check localStorage
-    const storedLang = typeof window !== 'undefined' ? localStorage.getItem("lang") : null;
+    if (typeof window === "undefined") return;
+
+    // 1) URL parameter has top priority: ?lang=en or ?lang=fr
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get("lang");
+    if (urlLang === "en" || urlLang === "fr") {
+      setLangState(urlLang);
+      localStorage.setItem("lang", urlLang);
+      return;
+    }
+
+    // 2) Then localStorage
+    const storedLang = localStorage.getItem("lang");
     if (storedLang === "en" || storedLang === "fr") {
-      console.debug('[TranslationProvider] init - storedLang', storedLang);
       setLangState(storedLang);
       return;
     }
-    // Detect browser language
-    if (typeof window !== 'undefined') {
-      const browserLang = navigator.language || (navigator.languages && navigator.languages[0]);
-      console.debug('[TranslationProvider] init - browserLang', browserLang);
-      if (browserLang && browserLang.toLowerCase().startsWith("fr")) {
-        setLangState("fr");
-      } else {
-        setLangState("en");
-      }
+
+    // 3) Finally, browser language
+    const browserLang = navigator.language.toLowerCase();
+    if (browserLang.startsWith("fr")) {
+      setLangState("fr");
+    } else {
+      setLangState("en");
     }
   }, []);
 
-  // Save language to localStorage when changed
   const setLang = (newLang: Lang) => {
-    console.debug('[TranslationProvider] setLang called ->', newLang);
     setLangState(newLang);
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       localStorage.setItem("lang", newLang);
     }
   };
@@ -60,4 +68,6 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
       {children}
     </TranslationContext.Provider>
   );
-} 
+}
+
+export const useTranslation = () => useContext(TranslationContext);
