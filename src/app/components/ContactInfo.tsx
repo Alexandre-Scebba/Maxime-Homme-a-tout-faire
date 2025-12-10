@@ -46,27 +46,9 @@ export default function ContactInfo() {
           </a>
         </div>
 
-        {/* Service area map / image */}
-        <div className="mb-6 text-center text-lg md:text-xl font-semibold text-sky-900">
+        {/* Service area tagline */}
+        <div className="text-center text-lg md:text-xl font-semibold text-sky-900">
           {t("mont_serve_area")}
-        </div>
-        <div className="w-full flex justify-center">
-          <div className="rounded-xl shadow-lg p-2 bg-white/5 border-2 border-sky-600">
-            <a
-              href="/montmap.jpeg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block overflow-hidden rounded-lg"
-            >
-              <img
-                src="/montmap.jpeg"
-                alt={t("map_alt") || "Montreal service area map"}
-                className="block w-full max-w-[520px] h-auto object-contain rounded-md"
-                loading="lazy"
-                decoding="async"
-              />
-            </a>
-          </div>
         </div>
       </div>
     </section>
