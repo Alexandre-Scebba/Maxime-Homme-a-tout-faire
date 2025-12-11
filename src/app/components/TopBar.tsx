@@ -25,18 +25,26 @@ export default function TopBar() {
       {/* EN/FR Toggle */}
       <button
         onClick={() => {
-          console.debug('[TopBar] toggle clicked, before ->', lang);
+          console.debug("[TopBar] toggle clicked, before ->", lang);
           setLang(lang === "en" ? "fr" : "en");
         }}
         className="flex items-center font-bold select-none focus:outline-none bg-transparent border-none p-0"
         aria-label="Toggle language"
         style={{ background: "none", boxShadow: "none", fontSize: "inherit" }}
       >
-        <span className={lang === "en" ? "text-yellow-400" : "text-black"}>EN</span>
+        <span className={lang === "en" ? "text-yellow-400" : "text-black"}>
+          EN
+        </span>
         <span className="mx-1 font-bold text-gray-500">/</span>
-        <span className={lang === "fr" ? "text-yellow-400" : "text-black"}>FR</span>
+        <span className={lang === "fr" ? "text-yellow-400" : "text-black"}>
+          FR
+        </span>
       </button>
-      <div className="ml-2 px-2 py-0.5 rounded-md text-xs font-semibold bg-white border border-gray-200 text-gray-700">{lang.toUpperCase()}</div>
+
+      <div className="ml-2 px-2 py-0.5 rounded-md text-xs font-semibold bg-white border border-gray-200 text-gray-700">
+        {lang.toUpperCase()}
+      </div>
+
       {/* Phone and Facebook */}
       <div className="flex items-center gap-4">
         <a

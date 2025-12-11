@@ -10,15 +10,15 @@
   "topbar_painting_services": "Residential painting in Montreal and Laval",
   "topbar_call_now": "Call now:",
 
-  "about_title": "About Maxime Peinture",
+"about_title": "About Maxime Peinture – Residential Painter in Montreal & Laval",
   "about_text": "Maxime Peinture brings 10 years of experience delivering clean, professional painting services across Montreal. We focus on quality finishes, reliable scheduling, and customer satisfaction.",
-  "services_title": "Our Services",
-  "testimonials_title": "What Our Clients Say",
+"services_title": "Our Painting Services in Montreal and Laval",
+"testimonials_title": "What Our Painting Clients Say",
   "testimonial_1": "“The crew was professional and left the space spotless. Great finish — highly recommend.”",
   "testimonial_2": "“Very reliable scheduling and excellent workmanship. Would hire again.”",
   "testimonial_author_1": "A satisfied customer",
   "testimonial_author_2": "A satisfied customer",
-  "contact_info_title": "Contact Information",
+"contact_info_title": "Contact Our Painting Team in Montreal & Laval",
   "address": "Address",
   "phone": "Phone",
   "phone_label": "Phone",
@@ -29,9 +29,12 @@
   "your_phone": "Phone # (optional)",
   "how_can_we_help": "Short job description",
   "send_request": "Send Request",
+  
   "gallery_title": "Project Gallery",
   "project_gallery_title": "Project Gallery",
+  "gallery_h2_seo": "Residential painting, wall repair, and interior repainting projects in Montreal and Laval",
   "gallery_instruction": "Click any image to enlarge — use left/right arrows to navigate.",
+  
   "surface_prep": "Surface Preparation",
   "surface_prep_desc": "We protect floors, furniture, and surrounding areas with care to ensure a clean and safe workspace before any painting begins.",
   "wall_repair": "Wall Repair",
@@ -133,5 +136,13 @@
   "mont_serve_area": "We proudly serve the Greater Montreal Area.",
   "response_time_message": "We typically respond within 2 business days.",
   "pricing_note": "Free estimate only",
-  "seo_keywords": "interior painting montreal, exterior painting montreal, residential painting montreal, peintre montreal"
+  "seo_keywords": "interior painting montreal, exterior painting montreal, residential painting montreal, peintre montreal",
+
+  "alt_surface_prep": "Surface preparation project",
+  "alt_wall_repair": "Wall repair project",
+  "alt_ceiling_painting": "Ceiling painting project",
+  "alt_interior_painting": "Interior painting project",
+  "alt_exterior_painting": "Exterior painting project"
+
+
 } 

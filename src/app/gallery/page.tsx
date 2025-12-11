@@ -22,10 +22,11 @@ export default function GalleryPage() {
   }, []);
 
   // Categories
-  const categories: { id: string; titleKey: string; imgs: string[] }[] = [
+  const categories: { id: string; titleKey: string; altKey: string; imgs: string[] }[] = [
     {
       id: "surface-prep",
       titleKey: "surface_prep",
+      altKey: "alt_surface_prep",
       imgs: [
         "/Prep/kitchen-prep-1.jpg",
         "/Prep/kitchen-prep-2.jpg",
@@ -40,6 +41,7 @@ export default function GalleryPage() {
     {
       id: "wall-repair",
       titleKey: "wall_repair",
+      altKey: "alt_wall_repair",
       imgs: [
         "/Wall Repair/wall-repair-brick.jpg",
         "/Wall Repair/wall-repair-frames-before-after.jpg",
@@ -59,6 +61,7 @@ export default function GalleryPage() {
     {
       id: "paint",
       titleKey: "project_section_3",
+      altKey: "alt_interior_painting",
       imgs: [
         "/Paint/2-white-doors-before-after.jpg",
         "/Finished/20250102_131929.jpg",
@@ -95,18 +98,21 @@ export default function GalleryPage() {
     {
       id: "exterior-paint",
       titleKey: "exterior_paint",
+      altKey: "alt_exterior_painting",
       imgs: [
         "/Exterior/exterior-stairs-1.jpg",
         "/Services/outdoor iron painting.jpg",
         "/Exterior/exterior-door-8-panel.jpg",
-
       ],
     },
   ];
 
-  // Flatten images for lightbox index mapping and include category title for each image
+  // Flatten images for lightbox index mapping and include category-based title
   const flat: { src: string; title: string }[] = categories.flatMap((c) =>
-    c.imgs.map((s) => ({ src: s, title: t(c.titleKey) || c.titleKey }))
+    c.imgs.map((s) => ({
+      src: s,
+      title: t(c.altKey) || t(c.titleKey) || c.titleKey,
+    }))
   );
 
   // Helper: get flat index from category and image index
@@ -150,10 +156,11 @@ export default function GalleryPage() {
         </p>
 
         {categories.map((cat, ci) => (
-          <section 
-          id={cat.id} 
-          key={cat.id} 
-          className="mb-10 scroll-mt-32">
+          <section
+            id={cat.id}
+            key={cat.id}
+            className="mb-10 scroll-mt-32"
+          >
             <h2 className="text-2xl font-bold mb-4 shine-blue-slow">
               {t(cat.titleKey) || cat.titleKey}
             </h2>
@@ -169,7 +176,7 @@ export default function GalleryPage() {
                 >
                   <img
                     src={src}
-                    alt={`Project ${ci}-${ii + 1}`}
+                    alt={t(cat.altKey) || t(cat.titleKey) || cat.titleKey}
                     className="w-full h-28 object-cover"
                     draggable={false}
                   />
@@ -233,7 +240,7 @@ export default function GalleryPage() {
                 />
               </div>
 
-              <div className="mt-3 text-center text-white font-semibold">
+              <div className="mt-3 text-center text.white font-semibold">
                 {flat[selected].title}
               </div>
             </div>

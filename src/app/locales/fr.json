@@ -30,9 +30,12 @@
   "your_phone": "Téléphone # (optionnel)",
   "how_can_we_help": "Courte description des travaux",
   "send_request": "Envoyer la demande",
+
   "gallery_title": "Galerie de projets",
   "project_gallery_title": "Galerie de projets",
+  "gallery_h2_seo": "Projets de peinture résidentielle, réparation de murs et travaux intérieurs à Montréal et Laval",
   "gallery_instruction": "Cliquez sur l'image pour l'agrandir — utilisez les touches gauche/droite pour naviguer.",
+  
   "surface_prep": "Préparation des surfaces",
   "surface_prep_desc": "Nous protégeons les planchers, les meubles et les zones environnantes avec soin pour assurer un espace de travail propre et sécuritaire avant le début des travaux de peinture.",
   "wall_repair": "Réparation des murs",
@@ -133,5 +136,12 @@
   "mont_serve_area": "Nous desservons fièrement la grande région de Montréal.",
   "response_time_message": "Nous répondons généralement sous 2 jours ouvrables.",
   "pricing_note": "Estimation gratuite seulement",
-  "seo_keywords": "peinture intérieure montreal, peinture extérieure montreal, peinture résidentielle montreal, peintre montreal"
+  "seo_keywords": "peinture intérieure montreal, peinture extérieure montreal, peinture résidentielle montreal, peintre montreal",
+
+  "alt_surface_prep": "Projet de préparation de surface",
+  "alt_wall_repair": "Projet de réparation de murs",
+  "alt_ceiling_painting": "Projet de peinture de plafond",
+  "alt_interior_painting": "Projet de peinture intérieure",
+  "alt_exterior_painting": "Projet de peinture extérieure"
+
 } 

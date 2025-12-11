@@ -55,19 +55,19 @@ export default function Hero() {
       id="home"
     >
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-     {/* SEO H1 – hidden visually but used by Google and screen readers */}
-      <h1 className="sr-only">
-        {t("hero_h1_seo")}
-      </h1>
+        {/* SEO H1 – hidden visually but used by Google and screen readers */}
+        <h1 className="sr-only">
+          {t("hero_h1_seo")}
+        </h1>
 
-      {/* Visible main title – still styled as your big title */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow shine-blue-slow text-center mx-auto w-fit">
-            {t("hero_title")}
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 font-medium drop-shadow">
-            {t("hero_subtitle")}
-          </p>
+        {/* Visible main title (same look as before, not an H1) */}
+        <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow shine-blue-slow text-center mx-auto w-fit">
+          {t("hero_title")}
+        </p>
 
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 font-medium drop-shadow">
+          {t("hero_subtitle")}
+        </p>
 
         <a
           href="#quote"

@@ -6,7 +6,7 @@ export default function Footer() {
 
   const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER || "";
   const phoneDisplay = process.env.NEXT_PUBLIC_PHONE_DISPLAY || phone;
-  const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@example.com";
+  const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@maximepeinture.com";
 
   return (
     <footer className="w-full bg-sky-900 text-white py-8 mt-12">
@@ -25,7 +25,7 @@ export default function Footer() {
         {/* Contact Info */}
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 text-sm mt-3 text-center">
           <a href={`tel:${phone}`} className="hover:underline">
-            {t("phone_label")}: {phoneDisplay}
+            {phoneDisplay}
           </a>
 
           <a href={`mailto:${email}`} className="hover:underline">
