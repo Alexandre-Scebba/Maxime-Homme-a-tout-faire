@@ -4,11 +4,11 @@ import Link from "next/link";
 
 import { useTranslation } from "../TranslationProvider";
 
-export default function Achievements() {
+export default function GalleryPage() {
   const { t } = useTranslation();
   const [selected, setSelected] = useState<number | null>(null);
 
-  // Smooth-scroll to hash if present (works when navigating from main page /achievements#id)
+  // Smooth-scroll to hash if present (works when navigating from main page /gallery#id)
   useEffect(() => {
     if (typeof window === "undefined") return;
     const hash = window.location.hash;

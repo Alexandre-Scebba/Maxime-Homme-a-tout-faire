@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home FR -->
+  <url>
+    <loc>https://maxime-homme-a-tout-faire.vercel.app/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Home EN -->
+  <url>
+    <loc>https://maxime-homme-a-tout-faire.vercel.app/?lang=en</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Gallery FR -->
+  <url>
+    <loc>https://maxime-homme-a-tout-faire.vercel.app/gallery</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Gallery EN -->
+  <url>
+    <loc>https://maxime-homme-a-tout-faire.vercel.app/gallery?lang=en</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

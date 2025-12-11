@@ -1,9 +1,15 @@
 {
   "greeting": "Bonjour",
   "about": "À propos de nous",
+ 
   "hero_title": "Maxime Peinture",
-  "hero_subtitle": "Services professionnels de peinture intérieure et extérieure dans la grande région de Montréal",
-  "request_quote": "Demander une soumission gratuite",
+  "hero_h1_seo": "Peintre résidentiel à Montréal & Laval",
+  "hero_subtitle": "Peinture intérieure, réparation de murs et finitions propres pour appartements, condos et maisons.",
+
+  "topbar_free_quote": "Obtenez une soumission gratuite dès aujourd’hui !",
+  "topbar_painting_services": "Peinture résidentielle à Montréal et Laval",
+  "topbar_call_now": "Appelez maintenant :",
+
   "about_title": "À propos de Maxime Peinture",
   "about_text": "Maxime Peinture apporte 10 ans d'expérience en fournissant des services de peinture propres et professionnels à travers Montréal. Nous privilégions une finition de qualité, une planification fiable et la satisfaction du client.",
   "services_title": "Nos Services",
@@ -96,6 +102,7 @@
 "products_intro": "Nous travaillons avec des produits Dulux de qualité professionnelle, choisis pour leur durabilité et leurs belles finitions dans votre maison.",
 "products_pro_note": "Produit de qualité professionnelle pour des résultats durables",
 
+"request_quote": "Demander une soumission gratuite",
 
 "reviews_blurb": "Découvrez ce que nos clients disent de notre travail.",
 "leave_review": "Lisez nos avis et laissez-nous 5 étoiles si vous avez aimé notre service !",

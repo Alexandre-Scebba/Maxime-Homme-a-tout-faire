@@ -4,7 +4,7 @@ import { useTranslation } from "../TranslationProvider";
 import { Facebook } from "lucide-react";
 
 export default function TopBar() {
-  const { lang, setLang } = useTranslation();
+  const { lang, setLang, t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function TopBar() {
           className="font-bold text-yellow-600 hover:text-yellow-700 transition"
           style={{ fontSize: "inherit" }}
         >
-          Call Now: 000-000-0000
+          {t("topbar_call_now")} 000-000-0000
         </a>
         <a
           href="https://facebook.com/"

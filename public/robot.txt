@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Your canonical sitemap location
+Sitemap: https://maxime-homme-a-tout-faire.vercel.app/sitemap.xml

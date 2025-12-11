@@ -40,7 +40,7 @@ export default function Gallery() {
           {galleryImages.map((img) => (
             <Link
               key={img.id}
-              href={`/achievements#${img.id}`}
+              href={`/gallery#${img.id}`}
               className="group block rounded-lg overflow-hidden shadow-lg"
               prefetch={false}
             >

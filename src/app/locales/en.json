@@ -1,9 +1,15 @@
 {
   "greeting": "Hello",
   "about": "About Us",
+
   "hero_title": "Maxime Peinture",
-  "hero_subtitle": "Professional interior and exterior painting services in the Greater Montreal Area",
-  "request_quote": "Request a Free Quote",
+  "hero_h1_seo": "Residential Painting in Montreal & Laval",
+  "hero_subtitle": "Interior painting, wall repair, and clean finishes for apartments, condos and houses.",
+
+  "topbar_free_quote": "Get a free quote today!",
+  "topbar_painting_services": "Residential painting in Montreal and Laval",
+  "topbar_call_now": "Call now:",
+
   "about_title": "About Maxime Peinture",
   "about_text": "Maxime Peinture brings 10 years of experience delivering clean, professional painting services across Montreal. We focus on quality finishes, reliable scheduling, and customer satisfaction.",
   "services_title": "Our Services",
@@ -93,6 +99,7 @@
 "product_joint_tape_title": "Drywall Joint Tape",
 "product_joint_tape_desc": "Used for reinforcing drywall seams; Prevents cracking along joints; Creates a strong base before applying joint compound",
 
+"request_quote": "Request a free quote",
 
 "reviews_blurb": "See what customers are saying about our work.",
 "leave_review": "Read our reviews and leave us 5-stars if you enjoyed our service!",
