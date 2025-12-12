@@ -136,6 +136,7 @@
   "mont_serve_area": "We proudly serve the Greater Montreal Area.",
   "response_time_message": "We typically respond within 2 business days.",
   "pricing_note": "Free estimate only",
+  "quote_cooldown_message": "Your quote request was sent. Please wait {{time}} if you'd like to send another one.",
   "seo_keywords": "interior painting montreal, exterior painting montreal, residential painting montreal, peintre montreal",
 
   "alt_surface_prep": "Surface preparation project",

@@ -1,34 +1,92 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useTranslation } from "../TranslationProvider";
+
+const COOLDOWN_MS = 2 * 60 * 1000; // 2 minutes
+const COOLDOWN_KEY = "quote_submit_cooldown";
 
 export default function Contact() {
   const { t, lang } = useTranslation();
+  const router = useRouter();
   const formRef = useRef<HTMLFormElement>(null);
-  const [formSent, setFormSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [cooldownEnd, setCooldownEnd] = useState<number | null>(null);
+  const [timeRemaining, setTimeRemaining] = useState<string | null>(null);
+
+  // Check cooldown on mount and set up countdown interval
+  useEffect(() => {
+    const checkCooldown = () => {
+      const lastTs = localStorage.getItem(COOLDOWN_KEY);
+      if (lastTs) {
+        const elapsed = Date.now() - Number(lastTs);
+        if (elapsed < COOLDOWN_MS) {
+          const endTime = Number(lastTs) + COOLDOWN_MS;
+          setCooldownEnd(endTime);
+        } else {
+          localStorage.removeItem(COOLDOWN_KEY);
+          setCooldownEnd(null);
+        }
+      }
+    };
+
+    checkCooldown();
+
+    // Update countdown every second
+    const interval = setInterval(() => {
+      const lastTs = localStorage.getItem(COOLDOWN_KEY);
+      if (lastTs) {
+        const remaining = Number(lastTs) + COOLDOWN_MS - Date.now();
+        if (remaining > 0) {
+          const mins = Math.floor(remaining / 60000);
+          const secs = Math.floor((remaining % 60000) / 1000);
+          setTimeRemaining(`${mins}m ${secs}s`);
+          setCooldownEnd(Number(lastTs) + COOLDOWN_MS);
+        } else {
+          localStorage.removeItem(COOLDOWN_KEY);
+          setCooldownEnd(null);
+          setTimeRemaining(null);
+        }
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!formRef.current) return;
+    if (!formRef.current || isSubmitting || cooldownEnd) return;
+
+    setIsSubmitting(true);
 
     const form = new FormData(formRef.current);
     const payload = Object.fromEntries(form.entries());
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-    if (res.ok) {
-      setFormSent(true);
-    } else {
-      const data = await res.json().catch(() => ({}));
-      alert(
-        (lang === "fr" ? "Échec de l'envoi : " : "Failed to send: ") +
-          (data.error || "Unknown error")
-      );
+      if (res.ok) {
+        // Set cooldown before redirect
+        localStorage.setItem(COOLDOWN_KEY, String(Date.now()));
+        setCooldownEnd(Date.now() + COOLDOWN_MS);
+        // Redirect to thank-you page
+        router.push("/thank-you");
+      } else {
+        const data = await res.json().catch(() => ({}));
+        alert(
+          (lang === "fr" ? "Échec de l'envoi : " : "Failed to send: ") +
+            (data.error || "Unknown error")
+        );
+      }
+    } catch (err) {
+      alert(lang === "fr" ? "Erreur réseau" : "Network error");
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -42,25 +100,15 @@ export default function Contact() {
           {t("request_quote")}
         </h2>
 
-        {formSent && (
-          <div className="fixed inset-0 flex items-center justify-center bg-sky-200/95 z-50">
-            <div className="bg-sky-400 text-white p-8 rounded-xl shadow-xl text-center max-w-md w-full mx-4">
-              <h3 className="text-2xl font-bold mb-4">
-                {lang === "fr"
-                  ? `Merci! ${t("response_time_message")}`
-                  : `Thank you! ${t("response_time_message")}`}
-              </h3>
-              <button
-                onClick={() => setFormSent(false)}
-                className="mt-4 bg-white text-sky-600 font-bold py-2 px-6 rounded shadow hover:bg-sky-100 transition"
-              >
-                {lang === "fr" ? "Fermer" : "Close"}
-              </button>
-            </div>
+        {cooldownEnd && (
+          <div className="mb-6 p-4 bg-sky-100 border border-sky-400 rounded-lg text-center">
+            <p className="text-sky-800 font-medium">
+              {t("quote_cooldown_message").replace("{{time}}", timeRemaining || "...")}
+            </p>
           </div>
         )}
 
-        {!formSent && (
+        {!cooldownEnd && (
           <form
             ref={formRef}
             onSubmit={handleSubmit}
@@ -180,9 +228,10 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold py-3 rounded-lg shadow hover:from-yellow-500 hover:to-yellow-700 transition"
+              disabled={isSubmitting}
+              className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold py-3 rounded-lg shadow hover:from-yellow-500 hover:to-yellow-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {t("send_request")}
+              {isSubmitting ? (lang === "fr" ? "Envoi en cours..." : "Sending...") : t("send_request")}
             </button>
           </form>
         )}

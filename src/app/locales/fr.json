@@ -136,6 +136,7 @@
   "mont_serve_area": "Nous desservons fièrement la grande région de Montréal.",
   "response_time_message": "Nous répondons généralement sous 2 jours ouvrables.",
   "pricing_note": "Estimation gratuite seulement",
+  "quote_cooldown_message": "Votre demande de soumission a été envoyée. Veuillez attendre {{time}} avant d'en envoyer une autre.",
   "seo_keywords": "peinture intérieure montreal, peinture extérieure montreal, peinture résidentielle montreal, peintre montreal",
 
   "alt_surface_prep": "Projet de préparation de surface",
