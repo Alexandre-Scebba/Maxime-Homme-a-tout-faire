@@ -71,12 +71,18 @@ export default function Contact() {
       });
 
       if (res.ok) {
-        // Set cooldown before redirect
         localStorage.setItem(COOLDOWN_KEY, String(Date.now()));
         setCooldownEnd(Date.now() + COOLDOWN_MS);
-        // Redirect to thank-you page
+
+        // 🔹 FIRE CONVERSION HERE (client-side)
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "conversion", {
+            send_to: "AW-16448175954/CONVERSION_LABEL_HERE",
+          });
+        }
+
         router.push("/thank-you");
-      } else {
+       } else {
         const data = await res.json().catch(() => ({}));
         alert(
           (lang === "fr" ? "Échec de l'envoi : " : "Failed to send: ") +

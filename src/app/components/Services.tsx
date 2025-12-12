@@ -18,7 +18,7 @@ const services: Record<"en" | "fr", Service[]> = {
     },
     {
       title: "Wall Repairs",
-      description: "Minor wall repairs and surface preparation to ensure a smooth, long-lasting paint finish.",
+      description: "Major and minor wall repairs and surface preparation to ensure a smooth, long-lasting paint finish.",
       icon: TriangleRight,
     },
     {
@@ -40,7 +40,7 @@ const services: Record<"en" | "fr", Service[]> = {
     },
     {
       title: "Réparations de murs",
-      description: "Réparations mineures des murs et préparation des surfaces pour garantir une finition de peinture lisse et durable.",
+      description: "Réparations majeures et mineures des murs et préparation des surfaces pour garantir une finition de peinture lisse et durable.",
       icon: TriangleRight,
     },
     {
