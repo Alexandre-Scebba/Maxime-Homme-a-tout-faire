@@ -75,9 +75,11 @@ export default function Contact() {
         setCooldownEnd(Date.now() + COOLDOWN_MS);
 
         // 🔹 FIRE CONVERSION HERE (client-side)
-        if (typeof window !== "undefined" && (window as any).gtag) {
+      if (typeof window !== "undefined" && (window as any).gtag) {
           (window as any).gtag("event", "conversion", {
-            send_to: "AW-16448175954/CONVERSION_LABEL_HERE",
+            send_to: "AW-16448175954/HyxUCP3ew9AbENL-jKM9",
+            value: 1.0,
+            currency: "CAD",
           });
         }
 
