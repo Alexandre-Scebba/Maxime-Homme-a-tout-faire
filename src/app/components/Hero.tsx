@@ -99,7 +99,7 @@ export default function Hero() {
               </span>
 
               <span className="underline underline-offset-2">
-                Read our Google reviews
+                  {t("google_reviews_cta")}
               </span>
             </a>
           </div>
