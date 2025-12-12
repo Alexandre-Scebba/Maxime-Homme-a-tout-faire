@@ -23,12 +23,31 @@ export default function ContactInfo() {
           {/* Phone */}
           <a
             href={phoneRaw ? `tel:${phoneRaw}` : undefined}
-            onClick={() => {
-              if (typeof window !== "undefined" && (window as any).gtag) {
-                (window as any).gtag("event", "conversion", {
-                  send_to: "AW-16448175954/9-FMCOCU_c8bENL-jKM9",
-                });
+            onClick={(e) => {
+              if (!phoneRaw) return;
+              e.preventDefault();
+
+              const telHref = `tel:${phoneRaw}`;
+              const gtag = (window as any).gtag;
+
+              if (!gtag) {
+                window.location.href = telHref;
+                return;
               }
+
+              let done = false;
+              const go = () => {
+                if (done) return;
+                done = true;
+                window.location.href = telHref;
+              };
+
+              gtag("event", "conversion", {
+                send_to: "AW-16448175954/9-FMCOCU_c8bENL-jKM9",
+                event_callback: go,
+              });
+
+              setTimeout(go, 500);
             }}
             className="flex flex-col items-center bg-white rounded-xl shadow p-6 hover:shadow-2xl transition"
           >

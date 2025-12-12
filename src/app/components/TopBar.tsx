@@ -52,12 +52,30 @@ export default function TopBar() {
       <div className="flex items-center gap-4">
         <a
           href={`tel:${phone}`}
-          onClick={() => {
-            if (typeof window !== "undefined" && (window as any).gtag) {
-              (window as any).gtag("event", "conversion", {
-                send_to: "AW-16448175954/9-FMCOCU_c8bENL-jKM9",
-              });
+          onClick={(e) => {
+            e.preventDefault();
+
+            const telHref = `tel:${phone}`;
+            const gtag = (window as any).gtag;
+
+            if (!gtag) {
+              window.location.href = telHref;
+              return;
             }
+
+            let done = false;
+            const go = () => {
+              if (done) return;
+              done = true;
+              window.location.href = telHref;
+            };
+
+            gtag("event", "conversion", {
+              send_to: "AW-16448175954/9-FMCOCU_c8bENL-jKM9",
+              event_callback: go,
+            });
+
+            setTimeout(go, 500);
           }}
           className="font-bold text-yellow-600 hover:text-yellow-700 transition"
           style={{ fontSize: "inherit" }}

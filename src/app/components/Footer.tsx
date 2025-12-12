@@ -26,14 +26,32 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 text-sm text-center mt-1">
           <a
             href={`tel:${phone}`}
-            onClick={() => {
-              if (typeof window !== "undefined" && (window as any).gtag) {
-                (window as any).gtag("event", "conversion", {
-                  send_to: "AW-16448175954/9-FMCOCU_c8bENL-jKM9",
-                });
-              }
-            }}
             className="hover:underline"
+            onClick={(e) => {
+              e.preventDefault();
+
+              const telHref = `tel:${phone}`;
+              const gtag = (window as any).gtag;
+
+              if (!gtag) {
+                window.location.href = telHref;
+                return;
+              }
+
+              let done = false;
+              const go = () => {
+                if (done) return;
+                done = true;
+                window.location.href = telHref;
+              };
+
+              gtag("event", "conversion", {
+                send_to: "AW-16448175954/9-FMCOCU_c8bENL-jKM9",
+                event_callback: go,
+              });
+
+              setTimeout(go, 500);
+            }}
           >
             {phoneDisplay}
           </a>
