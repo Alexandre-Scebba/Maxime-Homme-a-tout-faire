@@ -24,7 +24,17 @@ export default function Footer() {
 
         {/* Contact Info */}
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 text-sm text-center mt-1">
-          <a href={`tel:${phone}`} className="hover:underline">
+          <a
+            href={`tel:${phone}`}
+            onClick={() => {
+              if (typeof window !== "undefined" && (window as any).gtag) {
+                (window as any).gtag("event", "conversion", {
+                  send_to: "AW-16448175954/9-FMCOCU_c8bENL-jKM9",
+                });
+              }
+            }}
+            className="hover:underline"
+          >
             {phoneDisplay}
           </a>
 
@@ -44,7 +54,8 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-xs opacity-80 mt-3">
-          &copy; {new Date().getFullYear()} Maxime Peinture. All rights reserved.
+          &copy; {new Date().getFullYear()} Maxime Peinture. All rights
+          reserved.
         </div>
       </div>
     </footer>

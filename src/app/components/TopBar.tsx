@@ -7,6 +7,9 @@ export default function TopBar() {
   const { lang, setLang, t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
 
+  const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER || "";
+  const phoneDisplay = process.env.NEXT_PUBLIC_PHONE_DISPLAY || phone;
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
@@ -48,12 +51,20 @@ export default function TopBar() {
       {/* Phone and Facebook */}
       <div className="flex items-center gap-4">
         <a
-          href="tel:0000000000"
+          href={`tel:${phone}`}
+          onClick={() => {
+            if (typeof window !== "undefined" && (window as any).gtag) {
+              (window as any).gtag("event", "conversion", {
+                send_to: "AW-16448175954/9-FMCOCU_c8bENL-jKM9",
+              });
+            }
+          }}
           className="font-bold text-yellow-600 hover:text-yellow-700 transition"
           style={{ fontSize: "inherit" }}
         >
-          {t("topbar_call_now")} 000-000-0000
+          {t("topbar_call_now")} {phoneDisplay}
         </a>
+
         <a
           href="https://facebook.com/"
           target="_blank"

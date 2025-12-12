@@ -6,8 +6,7 @@ export default function ContactInfo() {
 
   // Use the same pattern as in Header
   const phoneRaw = process.env.NEXT_PUBLIC_PHONE_NUMBER || "";
-  const phoneDisplay =
-    process.env.NEXT_PUBLIC_PHONE_DISPLAY || phoneRaw || "";
+  const phoneDisplay = process.env.NEXT_PUBLIC_PHONE_DISPLAY || phoneRaw || "";
 
   return (
     <section
@@ -24,6 +23,13 @@ export default function ContactInfo() {
           {/* Phone */}
           <a
             href={phoneRaw ? `tel:${phoneRaw}` : undefined}
+            onClick={() => {
+              if (typeof window !== "undefined" && (window as any).gtag) {
+                (window as any).gtag("event", "conversion", {
+                  send_to: "AW-16448175954/9-FMCOCU_c8bENL-jKM9",
+                });
+              }
+            }}
             className="flex flex-col items-center bg-white rounded-xl shadow p-6 hover:shadow-2xl transition"
           >
             <span className="text-lg font-bold mb-2 text-gray-700">
