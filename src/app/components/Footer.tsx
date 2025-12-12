@@ -6,24 +6,24 @@ export default function Footer() {
 
   const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER || "";
   const phoneDisplay = process.env.NEXT_PUBLIC_PHONE_DISPLAY || phone;
-  const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@maximepeinture.com";
+  const email =
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@maximepeinture.com";
 
   return (
-    <footer className="w-full bg-sky-900 text-white py-8 mt-12">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col items-center gap-3">
-
+    <footer className="w-full bg-sky-900 text-white py-4 mt-12">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col items-center gap-1">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2 hover:opacity-80">
           <img
             src="/logo.png?v=2"
             alt="Maxime Peinture Logo"
-            className="w-10 h-10 object-contain"
+            className="w-32 object-contain"
           />
           <span className="font-bold text-lg">Maxime Peinture</span>
         </a>
 
         {/* Contact Info */}
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 text-sm mt-3 text-center">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 text-sm text-center mt-1">
           <a href={`tel:${phone}`} className="hover:underline">
             {phoneDisplay}
           </a>
@@ -46,7 +46,6 @@ export default function Footer() {
         <div className="text-xs opacity-80 mt-3">
           &copy; {new Date().getFullYear()} Maxime Peinture. All rights reserved.
         </div>
-
       </div>
     </footer>
   );
